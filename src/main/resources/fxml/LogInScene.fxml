@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.canvas.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
@@ -23,7 +25,7 @@
                   <Pane layoutY="201.0" prefHeight="600.0" prefWidth="1280.0" styleClass="log-in-header" />
                   <Pane layoutX="391.0" layoutY="161.0" prefHeight="400.0" prefWidth="500.0" styleClass="log-in-pane">
                      <children>
-                        <VBox layoutX="94.0" layoutY="200.0">
+                        <VBox layoutX="94.0" layoutY="200.0" spacing="5.0">
                            <children>
                               <TextField prefHeight="40.0" prefWidth="300.0" promptText="Username">
                                  <font>
