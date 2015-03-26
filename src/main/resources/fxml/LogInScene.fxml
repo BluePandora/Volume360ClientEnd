@@ -30,13 +30,18 @@
                                     <Font name="Roboto Regular" size="20.0" />
                                  </font>
                               </TextField>
-                              <PasswordField prefHeight="40.0" promptText="Password">
+                              <PasswordField prefHeight="40.0" prefWidth="300.0" promptText="Password">
                                  <font>
-                                    <Font size="20.0" />
+                                    <Font name="Roboto Regular" size="20.0" />
                                  </font>
                               </PasswordField>
                            </children>
                         </VBox>
+                        <Button layoutX="94.0" layoutY="300.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="300.0" text="SIGN IN">
+                           <font>
+                              <Font name="Roboto Condensed Light" size="20.0" />
+                           </font>
+                        </Button>
                      </children>
                   </Pane>
                </children>
