@@ -1,0 +1,21 @@
+.background {
+	-fx-background-color: #ED9124;
+}
+
+.log-in-pane {
+	-fx-background-color: #F7F7F7;
+	-fx-background-radius: 2;
+	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0.0, 0, 3);
+}
+
+.log-in-header {
+	-fx-background-color: rgba(255, 255, 255, .92);
+}
+
+.text-field {
+	-fx-prompt-text-fill: #3A3A3A;
+}
+
+.password-field {
+	-fx-prompt-text-fill: #3A3A3A;
+}
