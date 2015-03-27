@@ -10,19 +10,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" styleClass="background" stylesheets="@../styles/LogInSceneStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" styleClass="background" stylesheets="@../styles/LogInSceneStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.volume360.LogInSceneController">
    <children>
-      <GridPane prefHeight="720.0" prefWidth="1280.0">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <AnchorPane prefHeight="720.0" prefWidth="1280.0">
+     <AnchorPane prefHeight="720.0" prefWidth="1280.0">
                <children>
-                  <Pane layoutY="201.0" prefHeight="600.0" prefWidth="1280.0" styleClass="log-in-header" />
+                  <Pane layoutY="201.0" prefHeight="520.0" prefWidth="1280.0" styleClass="log-in-header" />
                   <Pane layoutX="391.0" layoutY="161.0" prefHeight="400.0" prefWidth="500.0" styleClass="log-in-pane">
                      <children>
                         <VBox layoutX="94.0" layoutY="200.0" spacing="5.0">
@@ -39,16 +31,18 @@
                               </PasswordField>
                            </children>
                         </VBox>
-                        <Button layoutX="94.0" layoutY="300.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="300.0" text="SIGN IN">
+                        <Button layoutX="94.0" layoutY="300.0" mnemonicParsing="false" onAction="#onClick" onMouseEntered="#onHover" prefHeight="40.0" prefWidth="300.0" text="SIGN IN">
                            <font>
                               <Font name="Roboto Condensed Light" size="20.0" />
                            </font>
                         </Button>
+                  <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="144.0" layoutY="14.0" onMouseClicked="#onClickImage" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@188552034.png" />
+                     </image></ImageView>
                      </children>
                   </Pane>
                </children>
             </AnchorPane>
-         </children>
-      </GridPane>
    </children>
 </AnchorPane>
