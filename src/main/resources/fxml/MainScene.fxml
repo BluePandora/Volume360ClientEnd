@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" styleClass="background" stylesheets="@../styles/MainSceneStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="60.0" prefWidth="1280.0" styleClass="action-bar">
+         <children>
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="14.0" layoutY="10.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+               <image>
+               <Image url="@../styles/images/ic_menu_white_24dp.png" />
+               </image>
+            </ImageView>
+         </children></Pane>
+      <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="1164.0" layoutY="608.0" pickOnBounds="true" preserveRatio="true" styleClass="image-button">
+         <image>
+            <Image url="@../styles/images/fab_add_new_project.default.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
