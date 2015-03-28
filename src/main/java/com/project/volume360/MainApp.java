@@ -4,14 +4,16 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 public class MainApp extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		Parent root = FXMLLoader.load(getClass().getResource(
-				"/fxml/LogInScene.fxml"));
+		FXMLLoader fxmlLoader = new FXMLLoader();
+		fxmlLoader.setLocation(getClass().getResource("/fxml/MainScene.fxml"));
+		Parent root = fxmlLoader.load();
 		Scene scene = new Scene(root);
 		primaryStage.setTitle("JavaFX and Maven");
 		primaryStage.setWidth(1280);

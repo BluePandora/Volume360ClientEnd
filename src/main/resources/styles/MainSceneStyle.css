@@ -15,8 +15,29 @@
 	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 20, 0.0, 2, 6);
 }
 
-.image-button:pressed, .button:default:hover:pressed {
+.image-button:pressed, .image-button:default:hover:pressed {
 	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.5), 10, 0.0, 2, 6);
+}
+
+.menu-button {
+	-fx-opacity: .8;
+}
+
+.slide-menu {
+	-fx-background-color: #ECA403;
+	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 20, 0.0, 6, 5);
+}
+
+.slide-menu-front {
+	-fx-background-color: #ECA403;
+}
+
+.menu-button:hover {
+	-fx-opacity: 1;
+}
+
+.menu-button:pressed, .menu-button:default:hover:pressed {
+	-fx-opacity: 1;
 }
 
 .log-in-header {
