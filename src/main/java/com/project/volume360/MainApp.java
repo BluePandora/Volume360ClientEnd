@@ -14,7 +14,7 @@ public class MainApp extends Application {
 		fxmlLoader.setLocation(getClass().getResource("/fxml/MainScene.fxml"));
 		Parent root = fxmlLoader.load();
 		Scene scene = new Scene(root);
-		primaryStage.setTitle("JavaFX and Maven");
+		primaryStage.setTitle("Volume360");
 		primaryStage.setWidth(1280);
 		primaryStage.setHeight(720);
 		primaryStage.setResizable(false);
