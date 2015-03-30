@@ -21,13 +21,17 @@
                </children>
             </Pane>
          </right>
+         <center>
+            <ListView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </center>
          <left>
             <ScrollPane prefHeight="660.0" prefWidth="250.0" styleClass="slide-menu" BorderPane.alignment="CENTER">
               <content>
                 <AnchorPane styleClass="slide-menu-front">
                      <children>
                         <Pane prefHeight="658.0" prefWidth="248.0" styleClass="slide-menu-front" />
-                     </children></AnchorPane>
+                     </children>
+                  </AnchorPane>
               </content>
             </ScrollPane>
          </left>
