@@ -19,6 +19,31 @@
 	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.5), 10, 0.0, 2, 6);
 }
 
+.list-view {
+	-fx-background-color: #0000ff;
+	-fx-background-color: rgba(0, 0, 0, 0.0);
+}
+
+.list-cell {
+	-fx-background-color: #ffffff;
+	-fx-padding: 20 25 10 25;
+	-fx-background-insets: 10 20 2 20;
+	-fx-background-radius: 2;
+	-fx-font-size: 13pt;
+	-fx-font-family: "Museo Sans Rounded 700";
+	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 5, 0.0, 1, 2);
+}
+
+.list-cell:odd {
+	-fx-background-color: #ffffff;
+	-fx-padding: 20 25 10 25;
+	-fx-background-insets: 10 20 2 20;
+	-fx-background-radius: 2;
+	-fx-font-size: 13pt;
+	-fx-font-family: "Museo Sans Rounded 700";
+	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 5, 0.0, 1, 2);
+}
+
 .menu-button {
 	-fx-opacity: .8;
 }
@@ -44,6 +69,29 @@
 	-fx-background-color: rgba(255, 255, 255, .92);
 }
 
+.search-pane {
+	-fx-background-radius: 2;
+	-fx-background-color: rgba(255, 255, 255, .3);
+	-fx-border-width: 0;
+	-fx-border-radius: 2;
+}
+
+.search-pane:hover {
+	-fx-background-radius: 2;
+	-fx-background-color: rgba(255, 255, 255, .5);
+	-fx-border-width: 0;
+	-fx-border-radius: 2;
+}
+
+.search-pane:focused {
+	-fx-background-radius: 2;
+	-fx-background-color: rgba(255, 255, 255, 1);
+	-fx-border-width: 0;
+	-fx-border-radius: 2;
+}
+
+
+
 .text-field {
 	-fx-background-radius: 2;
 	-fx-background-color: #ffffff;
@@ -57,7 +105,24 @@
 }
 
 .text-field:focused {
-	-fx-effect: innershadow(gaussian, #6b6b6b, 7, 0.0, 0, 0);
+	
+}
+
+.search-field {
+	-fx-background-radius: 2;
+	-fx-background-color: rgba(255, 255, 255, 0.0);
+	-fx-border-width: 0;
+	-fx-border-radius: 0;
+	-fx-text-fill: #000000;
+	-fx-prompt-text-fill: #FFFFFF;
+}
+
+.text-field:hover {
+	-fx-effect: null;
+}
+
+.text-field:focused {
+	-fx-effect: null;
 }
 
 .password-field {
