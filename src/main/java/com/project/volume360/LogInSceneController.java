@@ -1,19 +1,38 @@
 package com.project.volume360;
 
+import java.awt.image.BufferedImage;
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+
+import javax.imageio.ImageIO;
+import javax.imageio.stream.FileImageInputStream;
 import javax.swing.SwingUtilities;
 
+import javafx.beans.value.ObservableValue;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.image.WritableImage;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.control.TextField;
 
 public class LogInSceneController {
 
 	@FXML
 	private ImageView imageView;
+	@FXML
+	private ImageView searchImage;
+
+	@FXML
+	private TextField searchField;
 
 	public LogInSceneController() {
 	}
@@ -40,6 +59,27 @@ public class LogInSceneController {
 		imageView.setClip(clip);
 		imageView
 				.setStyle("-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0.0, 0, 6)");
+		searchField.focusedProperty().addListener(
+				(observer, oldValue, newValue) -> searchFieldObserver(observer,
+						oldValue, newValue));
+	}
+
+	private Object searchFieldObserver(
+			ObservableValue<? extends Boolean> observer, Boolean oldValue,
+			Boolean newValue) {
+		if (newValue) {
+			File file = new File(System.getProperty("user.dir")
+					+ "/src/main/resources/images/ic_search_black_18dp.png");
+			Image image = new Image(file.toURI().toString());
+			searchImage.setImage(image);
+		} else {
+			File file = new File(System.getProperty("user.dir")
+					+ "/src/main/resources/images/ic_search_white_18dp.png");
+			Image image = new Image(file.toURI().toString());
+			searchImage.setImage(image);
+
+		}
+		return null;
 	}
 
 	@FXML
