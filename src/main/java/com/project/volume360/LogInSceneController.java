@@ -43,7 +43,6 @@ public class LogInSceneController {
 		clip.setRadius(imageView.getLayoutBounds().getWidth() / 2);
 		clip.setTranslateX(imageView.getLayoutBounds().getWidth() / 2);
 		clip.setTranslateY(imageView.getLayoutBounds().getWidth() / 2);
-		System.err.println("ok1");
 		SwingUtilities.invokeLater(new Runnable() {
 
 			@Override
@@ -55,7 +54,6 @@ public class LogInSceneController {
 
 			}
 		});
-		System.err.println("ok2");
 		imageView.setClip(clip);
 		imageView
 				.setStyle("-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0.0, 0, 6)");
