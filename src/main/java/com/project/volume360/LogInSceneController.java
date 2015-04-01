@@ -1,27 +1,15 @@
 package com.project.volume360;
 
-import java.awt.image.BufferedImage;
-import java.io.BufferedInputStream;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-
-import javax.imageio.ImageIO;
-import javax.imageio.stream.FileImageInputStream;
 import javax.swing.SwingUtilities;
 
 import javafx.beans.value.ObservableValue;
-import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.image.WritableImage;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Circle;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.control.TextField;
 
 public class LogInSceneController {
@@ -30,6 +18,9 @@ public class LogInSceneController {
 	private ImageView imageView;
 	@FXML
 	private ImageView searchImage;
+
+	@FXML
+	private ImageView menuButton;
 
 	@FXML
 	private TextField searchField;
@@ -93,6 +84,12 @@ public class LogInSceneController {
 	@FXML
 	public void onClickImage(MouseEvent mouseEvent) {
 		System.out.println("ok");
+	}
+
+	@FXML
+	public void onMenuPressed(MouseEvent mouseEvent) {
+		System.out.println("ok");
+		menuButton.requestFocus();
 	}
 
 }
