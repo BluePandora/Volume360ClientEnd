@@ -61,6 +61,7 @@ public class LogInSceneController {
 					+ "/src/main/resources/images/ic_search_black_18dp.png");
 			Image image = new Image(file.toURI().toString());
 			searchImage.setImage(image);
+			
 		} else {
 			File file = new File(System.getProperty("user.dir")
 					+ "/src/main/resources/images/ic_search_white_18dp.png");
