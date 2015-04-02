@@ -77,7 +77,7 @@ public class LogInSceneController {
 			searchImage.setImage(image);
 			actionBar.setStyle("-fx-background-color: #BCBCBC;");
 
-		} else {
+		} else { 
 			File file = new File(System.getProperty("user.dir")
 					+ "/src/main/resources/images/ic_search_white_18dp.png");
 			Image image = new Image(file.toURI().toString());
