@@ -12,7 +12,7 @@
 
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" styleClass="background" stylesheets="@../styles/MainSceneStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.volume360.LogInSceneController">
    <children>
-      <ScrollPane layoutY="60.0" prefHeight="660.0" prefWidth="250.0" styleClass="slide-menu">
+      <ScrollPane fx:id="slidingMenuPane" layoutX="-270.0" layoutY="60.0" prefHeight="660.0" prefWidth="250.0" styleClass="slide-menu">
         <content>
           <AnchorPane styleClass="slide-menu-front">
                <children>
@@ -34,7 +34,7 @@
             </FXCollections>
          </items>
       </ListView>
-      <Pane prefHeight="60.0" prefWidth="1280.0" styleClass="action-bar">
+      <Pane fx:id="actionBar" prefHeight="60.0" prefWidth="1280.0" styleClass="action-bar">
          <children>
             <ImageView fx:id="menuButton" fitHeight="40.0" fitWidth="40.0" layoutX="14.0" layoutY="10.0" onMouseClicked="#onMenuPressed" opacity="0.9" pickOnBounds="true" preserveRatio="true" styleClass="menu-button">
                <image>

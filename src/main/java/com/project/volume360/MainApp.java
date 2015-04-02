@@ -17,7 +17,6 @@ public class MainApp extends Application {
 		primaryStage.setTitle("Volume360");
 		primaryStage.setWidth(1280);
 		primaryStage.setHeight(720);
-		primaryStage.setResizable(false);
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}

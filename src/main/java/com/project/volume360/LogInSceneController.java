@@ -1,16 +1,23 @@
 package com.project.volume360;
 
 import java.io.File;
+
 import javax.swing.SwingUtilities;
 
+import javafx.animation.Interpolator;
+import javafx.animation.TranslateTransition;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
+import javafx.util.Duration;
 
 public class LogInSceneController {
 
@@ -24,6 +31,15 @@ public class LogInSceneController {
 
 	@FXML
 	private TextField searchField;
+
+	@FXML
+	private ScrollPane slidingMenuPane;
+
+	@FXML
+	private Pane actionBar;
+
+	private boolean open = false;
+	TranslateTransition transition = new TranslateTransition(new Duration(500));
 
 	public LogInSceneController() {
 	}
@@ -46,8 +62,6 @@ public class LogInSceneController {
 			}
 		});
 		imageView.setClip(clip);
-		imageView
-				.setStyle("-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0.0, 0, 6)");
 		searchField.focusedProperty().addListener(
 				(observer, oldValue, newValue) -> searchFieldObserver(observer,
 						oldValue, newValue));
@@ -61,13 +75,14 @@ public class LogInSceneController {
 					+ "/src/main/resources/images/ic_search_black_18dp.png");
 			Image image = new Image(file.toURI().toString());
 			searchImage.setImage(image);
-			
+			actionBar.setStyle("-fx-background-color: #BCBCBC;");
+
 		} else {
 			File file = new File(System.getProperty("user.dir")
 					+ "/src/main/resources/images/ic_search_white_18dp.png");
 			Image image = new Image(file.toURI().toString());
 			searchImage.setImage(image);
-
+			actionBar.setStyle("-fx-background-color: #ECA403;");
 		}
 		return null;
 	}
@@ -91,6 +106,31 @@ public class LogInSceneController {
 	public void onMenuPressed(MouseEvent mouseEvent) {
 		System.out.println("ok");
 		menuButton.requestFocus();
-	}
+		transition.setNode(slidingMenuPane);
+		if (!open) {
+			transition.setFromX(0);
+			transition.setToX(270);
+			transition.setInterpolator(Interpolator.EASE_BOTH);
+			transition.setOnFinished(new EventHandler<ActionEvent>() {
 
+				@Override
+				public void handle(ActionEvent event) {
+					open = true;
+				}
+			});
+			transition.play();
+		} else {
+			transition.setFromX(270);
+			transition.setToX(0);
+			transition.setInterpolator(Interpolator.EASE_BOTH);
+			transition.play();
+			transition.setOnFinished(new EventHandler<ActionEvent>() {
+
+				@Override
+				public void handle(ActionEvent event) {
+					open = false;
+				}
+			});
+		}
+	}
 }
