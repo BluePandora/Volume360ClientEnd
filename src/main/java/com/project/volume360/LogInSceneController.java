@@ -15,6 +15,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
+import javafx.scene.control.ListView;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.util.Duration;
@@ -33,7 +34,7 @@ public class LogInSceneController {
 	private TextField searchField;
 
 	@FXML
-	private ScrollPane slidingMenuPane;
+	private ListView<String> slidingMenu;
 
 	@FXML
 	private Pane actionBar;
@@ -77,7 +78,7 @@ public class LogInSceneController {
 			searchImage.setImage(image);
 			actionBar.setStyle("-fx-background-color: #BCBCBC;");
 
-		} else { 
+		} else {
 			File file = new File(System.getProperty("user.dir")
 					+ "/src/main/resources/images/ic_search_white_18dp.png");
 			Image image = new Image(file.toURI().toString());
@@ -106,7 +107,7 @@ public class LogInSceneController {
 	public void onMenuPressed(MouseEvent mouseEvent) {
 		System.out.println("ok");
 		menuButton.requestFocus();
-		transition.setNode(slidingMenuPane);
+		transition.setNode(slidingMenu);
 		if (!open) {
 			transition.setFromX(0);
 			transition.setToX(270);
