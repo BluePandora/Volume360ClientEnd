@@ -106,6 +106,8 @@ public class LogInSceneController {
 	@FXML
 	public void onMenuPressed(MouseEvent mouseEvent) {
 		System.out.println("ok");
+		actionBar.setScaleX(2);
+		actionBar.setScaleY(2);
 		menuButton.requestFocus();
 		transition.setNode(slidingMenu);
 		if (!open) {
