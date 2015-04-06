@@ -1,4 +1,4 @@
-package com.project.volume360;
+package com.project.volume360.application;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

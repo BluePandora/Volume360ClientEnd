@@ -1,5 +1,5 @@
 .background {
-	-fx-background-color: #ECA403;
+	-fx-background-color: #F26D21;
 }
 
 .log-in-pane {
@@ -21,10 +21,10 @@
 }
 
 .text-field:hover {
-	-fx-effect: innershadow(gaussian, #6b6b6b, 10, 0.0, 0, 0);
+	-fx-effect: innershadow(gaussian,  #007495, 10, 0.0, 0, 0);
 }
 .text-field:focused {
-	-fx-effect: innershadow(gaussian, #6b6b6b, 7, 0.0, 0, 0);
+	-fx-effect: innershadow(gaussian,  #007495, 7, 0.0, 0, 0);
 }
 
 .password-field {
@@ -32,16 +32,17 @@
 }
 
 .button {
-	-fx-background-color: #00c2fb;
+	-fx-background-color: #F26D21;
+	-fx-text-fill: #ffffff;
 	-fx-background-radius: 2;
 }
 
 .button:hover {
-	-fx-background-color: #00c2fb;
+	-fx-background-color: #F26D21;
 	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 10, 0.0, 0, 3);
 }
 
 .button:pressed, .button:default:hover:pressed {
-	-fx-background-color: #00c2fb;
+	-fx-background-color: #F26D21;
 	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 10, 0.0, 0, 3);
 }
