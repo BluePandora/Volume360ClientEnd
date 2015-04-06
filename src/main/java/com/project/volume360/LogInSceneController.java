@@ -83,7 +83,7 @@ public class LogInSceneController {
 					+ "/src/main/resources/images/ic_search_white_18dp.png");
 			Image image = new Image(file.toURI().toString());
 			searchImage.setImage(image);
-			actionBar.setStyle("-fx-background-color: #ECA403;");
+			actionBar.setStyle("-fx-background-color: #F26D21;");
 		}
 		return null;
 	}
