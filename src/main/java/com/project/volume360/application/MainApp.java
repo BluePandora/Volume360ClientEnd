@@ -1,6 +1,8 @@
 package com.project.volume360.application;
 
 import com.project.volume360.application.item.Admin;
+import com.project.volume360.screen.LogInScreen;
+import com.project.volume360.screen.annotation.FXMLLocation;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -21,6 +23,9 @@ public class MainApp extends Application implements ApplicationListener {
 		primaryStage.setHeight(720);
 		primaryStage.setScene(scene);
 		primaryStage.show();
+		FXMLLocation fxmlLocation = LogInScreen.class
+				.getAnnotation(FXMLLocation.class);
+		System.out.println(fxmlLocation.location());
 	}
 
 	/**
