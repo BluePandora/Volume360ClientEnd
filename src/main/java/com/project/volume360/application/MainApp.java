@@ -1,12 +1,14 @@
 package com.project.volume360.application;
 
+import com.project.volume360.application.item.Admin;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class MainApp extends Application {
+public class MainApp extends Application implements ApplicationListener {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -23,7 +25,7 @@ public class MainApp extends Application {
 
 	/**
 	 * The main() method is ignored in correctly deployed JavaFX application.
-	 * main() serves only as fallback  in case the application can not be
+	 * main() serves only as fallback in case the application can not be
 	 * launched through deployment artifacts.
 	 *
 	 * @param args
@@ -31,6 +33,30 @@ public class MainApp extends Application {
 	 */
 	public static void main(String[] args) {
 		launch(args);
+	}
+
+	@Override
+	public void changeScene(int tag) {
+		switch (tag) {
+		case LOG_IN_SCENE:
+			break;
+		case MAIN_SCENE:
+			break;
+		default:
+			break;
+		}
+	}
+
+	@Override
+	public void savePersonDataToFile(Admin admin) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Admin loadPersonDataFromFile() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
