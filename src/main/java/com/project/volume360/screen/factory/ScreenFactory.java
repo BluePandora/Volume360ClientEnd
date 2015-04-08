@@ -37,10 +37,9 @@ public class ScreenFactory {
 		return screen;
 	}
 
-	private FXMLLoader getFxmlLoader(Class<?> class1) {
+	private FXMLLoader getFxmlLoader(Class<?> object) {
 		FXMLLoader fxmlLoader = new FXMLLoader();
-		fxmlLocation = class1.getAnnotation(FXMLLocation.class);
-		System.out.println(fxmlLocation.location());
+		fxmlLocation = object.getAnnotation(FXMLLocation.class);
 		fxmlLoader.setLocation(getClass().getResource(fxmlLocation.location()));
 		return fxmlLoader;
 	}

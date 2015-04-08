@@ -38,7 +38,7 @@ public class MainApp extends Application implements ApplicationListener {
 	 *            the command line arguments
 	 */
 	public static void main(String[] args) {
-		launch(args); 
+		launch(args);
 	}
 
 	@Override
@@ -47,6 +47,7 @@ public class MainApp extends Application implements ApplicationListener {
 		case LOG_IN_SCENE:
 			LogInScreen logInScreen = screenFactory
 					.getLogInScreen(primaryStage);
+			logInScreen.setApplicationListener(this);
 			primaryStage.setScene(logInScreen.getScene());
 			break;
 		case MAIN_SCENE:
