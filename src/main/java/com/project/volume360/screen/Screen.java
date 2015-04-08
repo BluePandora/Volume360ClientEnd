@@ -22,7 +22,7 @@ public abstract class Screen {
 	 * @return the rootPane
 	 */
 	public AnchorPane getRootPane() {
-		return rootPane;
+		return rootPane; 
 	}
 
 	/**
