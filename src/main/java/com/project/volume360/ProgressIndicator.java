@@ -73,7 +73,7 @@ public class ProgressIndicator extends Transition {
 				barExtraLength = newLength;
 			}
 		} else {
-			pausedTimeWithoutGrowing += deltaTimeInMilliSeconds;
+			pausedTimeWithoutGrowing +=  deltaTimeInMilliSeconds;
 		}
 	}
 
