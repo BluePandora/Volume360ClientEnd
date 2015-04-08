@@ -11,19 +11,12 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-abstract class Screen {
+public abstract class Screen {
 	private AnchorPane rootPane;
 	private FXMLLoader loader;
 	private Scene scene;
 	private Stage primaryStage;
 	private ApplicationListener applicationListener;
-
-
-	public <T> T findViewbyId(String locationId) throws IOException {
-		loader = new FXMLLoader();
-		// loader.setLocation(logInScreen);
-		return loader.load();
-	}
 
 	/**
 	 * @return the rootPane

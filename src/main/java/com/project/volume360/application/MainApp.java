@@ -1,8 +1,11 @@
 package com.project.volume360.application;
 
+import java.io.IOException;
+
 import com.project.volume360.application.item.Admin;
 import com.project.volume360.screen.LogInScreen;
 import com.project.volume360.screen.annotation.FXMLLocation;
+import com.project.volume360.screen.factory.ScreenFactory;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -12,20 +15,18 @@ import javafx.stage.Stage;
 
 public class MainApp extends Application implements ApplicationListener {
 
+	ScreenFactory screenFactory;
+	private Stage primaryStage;
+
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		FXMLLoader fxmlLoader = new FXMLLoader();
-		fxmlLoader.setLocation(getClass().getResource("/fxml/MainScene.fxml"));
-		Parent root = fxmlLoader.load();
-		Scene scene = new Scene(root);
+		screenFactory = new ScreenFactory();
 		primaryStage.setTitle("Volume360");
 		primaryStage.setWidth(1280);
 		primaryStage.setHeight(720);
-		primaryStage.setScene(scene);
+		this.primaryStage = primaryStage;
+		changeScene(LOG_IN_SCENE);
 		primaryStage.show();
-		FXMLLocation fxmlLocation = LogInScreen.class
-				.getAnnotation(FXMLLocation.class);
-		System.out.println(fxmlLocation.location());
 	}
 
 	/**
@@ -41,9 +42,12 @@ public class MainApp extends Application implements ApplicationListener {
 	}
 
 	@Override
-	public void changeScene(int tag) {
+	public void changeScene(int tag) throws IOException {
 		switch (tag) {
 		case LOG_IN_SCENE:
+			LogInScreen logInScreen = screenFactory
+					.getLogInScreen(primaryStage);
+			primaryStage.setScene(logInScreen.getScene());
 			break;
 		case MAIN_SCENE:
 			break;

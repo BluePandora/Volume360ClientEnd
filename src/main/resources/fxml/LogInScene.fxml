@@ -31,12 +31,12 @@
                               </PasswordField>
                            </children>
                         </VBox>
-                        <Button fx:id="signInButton" layoutX="94.0" layoutY="300.0" mnemonicParsing="false" onAction="#handleSignIn" onMouseEntered="#onHover" prefHeight="40.0" prefWidth="300.0" text="SIGN IN">
+                        <Button fx:id="signInButton" layoutX="94.0" layoutY="300.0" mnemonicParsing="false" onAction="#handleSignIn" prefHeight="40.0" prefWidth="300.0" text="SIGN IN">
                            <font>
                               <Font name="Roboto Condensed Light" size="20.0" />
                            </font>
                         </Button>
-                  <ImageView fitHeight="75.0" fitWidth="200.0" layoutX="150.0" layoutY="75.0" onMouseClicked="#onClickImage" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="75.0" fitWidth="200.0" layoutX="150.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/volume360.png" />
                      </image></ImageView>

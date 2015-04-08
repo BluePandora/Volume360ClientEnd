@@ -22,6 +22,6 @@ public class LogInScreen extends Screen {
 
 	@FXML
 	private void handleSignIn(ActionEvent actionEvent) {
-
+		System.out.println("ok");
 	}
 }
