@@ -1,16 +1,11 @@
 package com.project.volume360.application;
 
-import java.io.IOException;
-
 import com.project.volume360.application.item.Admin;
 import com.project.volume360.screen.LogInScreen;
-import com.project.volume360.screen.annotation.FXMLLocation;
+import com.project.volume360.screen.MainScreen;
 import com.project.volume360.screen.factory.ScreenFactory;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class MainApp extends Application implements ApplicationListener {
@@ -22,8 +17,9 @@ public class MainApp extends Application implements ApplicationListener {
 	public void start(Stage primaryStage) throws Exception {
 		screenFactory = new ScreenFactory();
 		primaryStage.setTitle("Volume360");
-		primaryStage.setWidth(1280);
-		primaryStage.setHeight(720);
+		primaryStage.setWidth(1286);
+		primaryStage.setHeight(745);
+		primaryStage.setResizable(false);
 		this.primaryStage = primaryStage;
 		changeScene(LOG_IN_SCENE);
 		primaryStage.show();
@@ -42,15 +38,19 @@ public class MainApp extends Application implements ApplicationListener {
 	}
 
 	@Override
-	public void changeScene(int tag) throws IOException {
+	public void changeScene(int tag) {
 		switch (tag) {
 		case LOG_IN_SCENE:
-			LogInScreen logInScreen = screenFactory
-					.getLogInScreen(primaryStage);
+			LogInScreen logInScreen = (LogInScreen) screenFactory.getScreen(
+					primaryStage, LogInScreen.class);
 			logInScreen.setApplicationListener(this);
 			primaryStage.setScene(logInScreen.getScene());
 			break;
 		case MAIN_SCENE:
+			MainScreen mainScreen = (MainScreen) screenFactory.getScreen(
+					primaryStage, MainScreen.class);
+			mainScreen.setApplicationListener(this);
+			primaryStage.setScene(mainScreen.getScene());
 			break;
 		default:
 			break;

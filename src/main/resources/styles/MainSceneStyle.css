@@ -50,8 +50,25 @@
 }
 
 .slide-menu {
-	-fx-background-color: #ECA403;
+	-fx-background-color: #EAEAEA;
 	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 20, 0.0, 6, 5);
+}
+
+.slide-menu>.list-cell {
+	-fx-padding: 20 25 10 25;
+	-fx-background-insets: 10 20 2 20;
+	-fx-background-radius: 2;
+	-fx-text-fill: #123456;
+	-fx-font-size: 13pt;
+	-fx-font-family: "Museo Sans Rounded 700";
+}
+
+.slide-menu>.list-cell:odd {
+	-fx-padding: 20 25 10 25;
+	-fx-background-insets: 10 20 2 20;
+	-fx-background-radius: 2;
+	-fx-font-size: 13pt;
+	-fx-font-family: "Museo Sans Rounded 700";
 }
 
 .slide-menu-front {
@@ -59,6 +76,8 @@
 }
 
 .menu-button:hover {
+	-fx-background-color: #FFFFFF;
+	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 20, 0.0, 2, 6);
 	-fx-opacity: 1;
 }
 

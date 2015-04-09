@@ -27,6 +27,17 @@ public class ScreenFactory {
 		return logInScreen;
 	}
 
+	public Screen getScreen(Stage primaryStage, Class<?> object) {
+		FXMLLoader fxmlLoader = getFxmlLoader(object);
+		AnchorPane rootPane = null;
+		try {
+			rootPane = (AnchorPane) fxmlLoader.load();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return getScreen(fxmlLoader, rootPane, primaryStage);
+	}
+
 	private Screen getScreen(FXMLLoader fxmlLoader, AnchorPane rootPane,
 			Stage primaryStage) {
 		Screen screen = fxmlLoader.getController();

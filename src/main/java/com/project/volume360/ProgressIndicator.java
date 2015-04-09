@@ -9,15 +9,8 @@ public class ProgressIndicator extends Transition {
 
 	private Arc arc;
 
-	// Sizes (with defaults in DP)
-	private int circleRadius = 28;
-	private int barWidth = 4;
-	private int rimWidth = 4;
-
-	private final int barLength = 16;
+	private final int barLength = 15;
 	private final int barMaxLength = 270;
-
-	private boolean fillRadius = false;
 
 	private double timeStartGrowing = 0;
 	private double barSpinCycleTime = 460;
@@ -29,16 +22,12 @@ public class ProgressIndicator extends Transition {
 
 	// Animation
 	// The amount of degrees per second
-	private float spinSpeed = 0;
+	private float spinSpeed = 120.f;
 	// private float spinSpeed = 120.0f;
 	// The last time the spinner was animated
 	private long lastTimeAnimated = 0;
 
-	private boolean linearProgress;
-
 	private float mProgress = 0.0f;
-	private float mTargetProgress = 0.0f;
-	private boolean isSpinning = true;
 
 	public ProgressIndicator(Arc arc) {
 		this.arc = arc;
@@ -73,7 +62,7 @@ public class ProgressIndicator extends Transition {
 				barExtraLength = newLength;
 			}
 		} else {
-			pausedTimeWithoutGrowing +=  deltaTimeInMilliSeconds;
+			pausedTimeWithoutGrowing += deltaTimeInMilliSeconds / 2;
 		}
 	}
 
@@ -81,16 +70,16 @@ public class ProgressIndicator extends Transition {
 	protected void interpolate(double frac) {
 		long deltaTime = (System.currentTimeMillis() - lastTimeAnimated);
 		updateBarLength(deltaTime);
-		mProgress += 5;
+		// long deltaUpdateTime = (long) (deltaTime * spinSpeed);
+		mProgress += 5.5;
 		if (mProgress > 360) {
 			mProgress -= 360f;
 		}
 		lastTimeAnimated = System.currentTimeMillis();
 
-		float from = mProgress - 90;
+		float from = mProgress;
 		float length = barLength + barExtraLength;
-		System.out.println(mProgress);
-
+		// System.out.println(mProgress);
 		arc.lengthProperty().set(length);
 		arc.startAngleProperty().set(from);
 		// arc.rotateProperty().set(rotate);
