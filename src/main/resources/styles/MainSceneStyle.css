@@ -128,7 +128,7 @@
 
 .menu-button {
 	-fx-background-color: rgba(0.0, 0.0, 0.0, 0.0);
-	-fx-background-image: url("images/ic_menu_white_18dp.png");
+		-fx-background-image: url("images/ic_menu_white_18dp.png");
 		-fx-opacity: 0.8;
 	-fx-shape:
 		"M 100, 100 m -75, 0 a 75, 75 0 1, 0 150, 0 a 75, 75 0 1, 0	-150, 0";
@@ -140,6 +140,25 @@
 }
 
 .menu-button:pressed, .menu-button:default:hover:pressed {
+			-fx-background-color: rgba(0.0, 0.0, 0.0, 0.2);
+	-fx-opacity: 1.0;
+}
+
+
+.menu-button-second {
+	-fx-background-color: rgba(0.0, 0.0, 0.0, 0.0);
+	-fx-background-image: url("images/ic_arrow_back_black_18dp.png");
+	-fx-opacity: 0.8;
+	-fx-shape:
+		"M 100, 100 m -75, 0 a 75, 75 0 1, 0 150, 0 a 75, 75 0 1, 0	-150, 0";
+}
+
+.menu-button-second:hover {
+		-fx-background-color: rgba(0.0, 0.0, 0.0, 0.15);
+	-fx-opacity: 1.0;
+}
+
+.menu-button-second:pressed, .menu-button-second:default:hover:pressed {
 			-fx-background-color: rgba(0.0, 0.0, 0.0, 0.2);
 	-fx-opacity: 1.0;
 }

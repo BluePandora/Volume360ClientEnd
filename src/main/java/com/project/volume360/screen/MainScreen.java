@@ -64,6 +64,7 @@ public class MainScreen extends Screen {
 
 	@FXML
 	public void initialize() {
+
 		final Circle clip = new Circle();
 		clip.setRadius(imageView.getLayoutBounds().getWidth() / 2);
 		clip.setTranslateX(imageView.getLayoutBounds().getWidth() / 2);
@@ -102,12 +103,16 @@ public class MainScreen extends Screen {
 			Image image = new Image(file.toURI().toString());
 			searchImage.setImage(image);
 			actionBar.setStyle("-fx-background-color: #BCBCBC;");
-
+			menuButton.getStyleClass().add("menu-button-second");
+			menuButton.getStyleClass().remove(1);
+			String images = "images/ic_arrow_back_black_24dp.png";
 		} else {
 			File file = new File(System.getProperty("user.dir")
 					+ "/src/main/resources/images/ic_search_white_18dp.png");
 			Image image = new Image(file.toURI().toString());
 			searchImage.setImage(image);
+			menuButton.getStyleClass().add("menu-button");
+			menuButton.getStyleClass().remove(1);
 			actionBar.setStyle("-fx-background-color: #F26D21;");
 		}
 		return null;
@@ -132,7 +137,6 @@ public class MainScreen extends Screen {
 	public void onMenuPressed(ActionEvent actionEvent) {
 		System.out.println(getPrimaryStage().getWidth() + " "
 				+ getPrimaryStage().getHeight());
-		menuButton.requestFocus();
 		transition.setNode(slidingMenu);
 		if (!open) {
 			transition.setFromX(0);
