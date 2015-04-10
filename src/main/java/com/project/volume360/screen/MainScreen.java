@@ -4,8 +4,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
-import javax.swing.SwingUtilities;
-
 import javafx.animation.Interpolator;
 import javafx.animation.TranslateTransition;
 import javafx.beans.value.ObservableValue;
@@ -14,7 +12,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.geometry.Orientation;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -30,6 +28,7 @@ import javafx.scene.text.Text;
 import javafx.util.Callback;
 import javafx.util.Duration;
 
+import com.project.volume360.application.control.SlidingMenuListCell;
 import com.project.volume360.screen.annotation.FXMLLocation;
 
 @FXMLLocation(location = "/fxml/MainScene.fxml")
@@ -41,7 +40,7 @@ public class MainScreen extends Screen {
 	private ImageView searchImage;
 
 	@FXML
-	private ImageView menuButton;
+	private Button menuButton;
 
 	@FXML
 	private TextField searchField;
@@ -69,23 +68,12 @@ public class MainScreen extends Screen {
 		clip.setRadius(imageView.getLayoutBounds().getWidth() / 2);
 		clip.setTranslateX(imageView.getLayoutBounds().getWidth() / 2);
 		clip.setTranslateY(imageView.getLayoutBounds().getWidth() / 2);
-		SwingUtilities.invokeLater(new Runnable() {
-
-			@Override
-			public void run() {
-				// TODO Auto-generated method stub
-				imageView
-						.setImage(new Image(
-								"https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xpf1/v/t1.0-9/10891870_865266643525240_802936034075979196_n.jpg?oh=5ad890fbacc9b79a9d525db06f151456&oe=55B3652A&__gda__=1437970923_76a9ee79a373de16c834cee39ff1c8cc"));
-
-			}
-		});
 		slidingMenu.setItems(data);
 		slidingMenu
 				.setCellFactory(new Callback<ListView<String>, ListCell<String>>() {
 					@Override
 					public ListCell<String> call(ListView<String> list) {
-						return new ColorRectCell();
+						return SlidingMenuListCell.getSlidingMenuListCell();
 					}
 				});
 		InputStream inputStream = getClass().getResourceAsStream(
@@ -97,7 +85,7 @@ public class MainScreen extends Screen {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		String string= new String(b);
+		String string = new String(b);
 		System.out.println(string);
 		imageView.setClip(clip);
 		searchField.focusedProperty().addListener(
@@ -141,7 +129,7 @@ public class MainScreen extends Screen {
 	}
 
 	@FXML
-	public void onMenuPressed(MouseEvent mouseEvent) {
+	public void onMenuPressed(ActionEvent actionEvent) {
 		System.out.println(getPrimaryStage().getWidth() + " "
 				+ getPrimaryStage().getHeight());
 		menuButton.requestFocus();

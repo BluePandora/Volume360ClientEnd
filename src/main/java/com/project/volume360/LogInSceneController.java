@@ -52,7 +52,6 @@ public class LogInSceneController {
 		clip.setTranslateX(imageView.getLayoutBounds().getWidth() / 2);
 		clip.setTranslateY(imageView.getLayoutBounds().getWidth() / 2);
 		SwingUtilities.invokeLater(new Runnable() {
-
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub

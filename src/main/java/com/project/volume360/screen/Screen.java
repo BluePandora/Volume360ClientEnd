@@ -2,8 +2,6 @@ package com.project.volume360.screen;
 
 //import static com.project.betelguese.app.utils.FxmlUrl.logInScreen;
 
-import java.io.IOException;
-
 import com.project.volume360.application.ApplicationListener;
 
 import javafx.fxml.FXMLLoader;
@@ -22,7 +20,7 @@ public abstract class Screen {
 	 * @return the rootPane
 	 */
 	public AnchorPane getRootPane() {
-		return rootPane; 
+		return rootPane;
 	}
 
 	/**

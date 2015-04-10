@@ -4,70 +4,66 @@
 
 .action-bar {
 	-fx-background-color: #F26D21;
-	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0.0, 0, 6);
+	-fx-effect: dropshadow(gaussian, rgba(0.0, 0.0, 0.0, 0.5), 10.0, 0.0, 0.0, 6.0);
 }
 
 .image-button {
-	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 15, 0.0, 2, 6);
+	-fx-effect: dropshadow(gaussian, rgba(0.0, 0.0, 0.0, 0.5), 15.0, 0.0, 2.0, 6.0);
 }
 
 .image-button:hover {
-	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 20, 0.0, 2, 6);
+	-fx-effect: dropshadow(gaussian, rgba(0.0, 0.0, 0.0, 0.6), 20.0, 0.0, 2.0, 6.0);
 }
 
 .image-button:pressed, .image-button:default:hover:pressed {
-	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.5), 10, 0.0, 2, 6);
+	-fx-effect: dropshadow(three-pass-box, rgba(0.0, 0.0, 0.0, 0.5), 10.0, 0.0, 2.0, 6.0);
 }
 
 .list-view {
 	-fx-background-color: #0000ff;
-	-fx-background-color: rgba(0, 0, 0, 0.0);
+	-fx-background-color: rgba(0.0, 0.0, 0.0, 0.0);
 }
 
 .list-cell {
 	-fx-background-color: #ffffff;
-	-fx-padding: 20 25 10 25;
-	-fx-background-insets: 10 20 2 20;
-	-fx-background-radius: 2;
+	-fx-padding: 20.0 25.0 10.0 25.0;
+	-fx-background-insets: 10.0 20.0 2.0 20.0;
+	-fx-background-radius: 2.0;
 	-fx-text-fill: #123456;
-	-fx-font-size: 13pt;
+	-fx-font-size: 13.0pt;
 	-fx-font-family: "Museo Sans Rounded 700";
-	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 5, 0.0, 1, 2);
+	-fx-effect: dropshadow(three-pass-box, rgba(0.0, 0.0, 0.0, 0.3), 5.0, 0.0, 1.0, 2.0);
 }
 
 .list-cell:odd {
 	-fx-background-color: #ffffff;
-	-fx-padding: 20 25 10 25;
-	-fx-background-insets: 10 20 2 20;
-	-fx-background-radius: 2;
-	-fx-font-size: 13pt;
+	-fx-padding: 20.0 25.0 10.0 25.0;
+	-fx-background-insets: 10.0 20.0 2.0 20.0;
+	-fx-background-radius: 2.0;
+	-fx-font-size: 13.0pt;
 	-fx-font-family: "Museo Sans Rounded 700";
-	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 5, 0.0, 1, 2);
-}
-
-.menu-button {
-	-fx-opacity: .8;
+	-fx-effect: dropshadow(three-pass-box, rgba(0.0, 0.0, 0.0, 0.3), 5.0, 0.0, 1.0, 2.0);
 }
 
 .slide-menu {
 	-fx-background-color: #EAEAEA;
-	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 20, 0.0, 6, 5);
+	-fx-effect: dropshadow(gaussian, rgba(0.0, 0.0, 0.0, 0.6), 20.0, 0.0, 6.0, 5.0);
 }
 
 .slide-menu>.list-cell {
-	-fx-padding: 20 25 10 25;
-	-fx-background-insets: 10 20 2 20;
-	-fx-background-radius: 2;
+	-fx-padding: 20.0 25.0 10.0 25.0;
+	-fx-background-insets: 10.0 20.0 2.0 20.0;
+	-fx-background-radius: 2.0;
 	-fx-text-fill: #123456;
-	-fx-font-size: 13pt;
+	-fx-font-size: 13.0pt;
 	-fx-font-family: "Museo Sans Rounded 700";
 }
 
 .slide-menu>.list-cell:odd {
-	-fx-padding: 20 25 10 25;
-	-fx-background-insets: 10 20 2 20;
-	-fx-background-radius: 2;
-	-fx-font-size: 13pt;
+	-fx-padding: 20.0 25.0 10.0 25.0;
+	-fx-background-insets: 10.0 20.0 2.0 20.0;
+	-fx-background-radius: 2.0;
+	-fx-font-size: 13.0pt;
 	-fx-font-family: "Museo Sans Rounded 700";
 }
 
@@ -75,47 +71,39 @@
 	-fx-background-color: #ECA403;
 }
 
-.menu-button:hover {
-	-fx-background-color: #FFFFFF;
-	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 20, 0.0, 2, 6);
-	-fx-opacity: 1;
-}
 
-.menu-button:pressed, .menu-button:default:hover:pressed {
-	-fx-opacity: 1;
-}
 
-.log-in-header {
-	-fx-background-color: rgba(255, 255, 255, .92);
+.log-in-header {	
+	-fx-background-color: rgba(255.0, 255.0, 255.0, 0.92);
 }
 
 .search-pane {
-	-fx-background-radius: 2;
-	-fx-background-color: rgba(255, 255, 255, .3);
-	-fx-border-width: 0;
-	-fx-border-radius: 2;
+	-fx-background-radius: 2.0;
+	-fx-background-color: rgba(255.0, 255.0, 255.0, 0.3);
+	-fx-border-width: 0.0;
+	-fx-border-radius: 2.0;
 }
 
 .search-pane:hover {
-	-fx-background-radius: 2;
-	-fx-background-color: rgba(255, 255, 255, .5);
-	-fx-border-width: 0;
-	-fx-border-radius: 2;
+	-fx-background-radius: 2.0;
+	-fx-background-color: rgba(255.0, 255.0, 255.0, 0.5);
+	-fx-border-width: 0.0;
+	-fx-border-radius: 2.0;
 }
 
 .search-pane:focused {
-	-fx-background-radius: 2;
-	-fx-background-color: rgba(255, 255, 255, 1);
-	-fx-border-width: 0;
-	-fx-border-radius: 2;
+	-fx-background-radius: 2.0;
+	-fx-background-color: rgba(255.0, 255.0, 255.0, 1.0);
+	-fx-border-width: 0.0;
+	-fx-border-radius: 2.0;
 }
 
 .search-field {
-	-fx-background-radius: 2;
-	-fx-background-color: rgba(255, 255, 255, .3);
-	-fx-border-width: 0;
-	-fx-border-radius: 2;
-	-fx-padding: 0 50 0 50;
+	-fx-background-radius: 2.0;
+	-fx-background-color: rgba(255.0, 255.0, 255.0, 0.3);
+	-fx-border-width: 0.0;
+	-fx-border-radius: 2.0;
+	-fx-padding: 0.0 50.0 0.0 50.0;
 	-fx-text-fill: #000000;
 	-fx-prompt-text-fill: #FFFFFF;
 }
@@ -125,11 +113,11 @@
 }
 
 .text-field:focused {
-	-fx-background-radius: 2;
-	-fx-background-color: rgba(255, 255, 255, 1);
-	-fx-border-width: 0;
-	-fx-border-radius: 2;
-	-fx-padding: 0 50 0 50;
+	-fx-background-radius: 2.0;
+	-fx-background-color: rgba(255.0, 255.0, 255.0, 1.0);
+	-fx-border-width: 0.0;
+	-fx-border-radius: 2.0;
+	-fx-padding: 0.0 50.0 0.0 50.0;
 	-fx-text-fill: #000000;
 	-fx-prompt-text-fill: #1f1f1f;
 }
@@ -138,17 +126,20 @@
 	-fx-prompt-text-fill: #3A3A3A;
 }
 
-.button {
-	-fx-background-color: #00c2fb;
-	-fx-background-radius: 2;
+.menu-button {
+	-fx-background-color: rgba(0.0, 0.0, 0.0, 0.0);
+	-fx-background-image: url("images/ic_menu_white_18dp.png");
+		-fx-opacity: 0.8;
+	-fx-shape:
+		"M 100, 100 m -75, 0 a 75, 75 0 1, 0 150, 0 a 75, 75 0 1, 0	-150, 0";
 }
 
-.button:hover {
-	-fx-background-color: #00c2fb;
-	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 10, 0.0, 0, 3);
+.menu-button:hover {
+		-fx-background-color: rgba(0.0, 0.0, 0.0, 0.15);
+	-fx-opacity: 1.0;
 }
 
-.button:pressed, .button:default:hover:pressed {
-	-fx-background-color: #00c2fb;
-	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 10, 0.0, 0, 3);
+.menu-button:pressed, .menu-button:default:hover:pressed {
+			-fx-background-color: rgba(0.0, 0.0, 0.0, 0.2);
+	-fx-opacity: 1.0;
 }
