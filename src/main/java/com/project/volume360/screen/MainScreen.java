@@ -1,22 +1,33 @@
 package com.project.volume360.screen;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 
 import javax.swing.SwingUtilities;
 
 import javafx.animation.Interpolator;
 import javafx.animation.TranslateTransition;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.geometry.Orientation;
+import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
+import javafx.util.Callback;
 import javafx.util.Duration;
 
 import com.project.volume360.screen.annotation.FXMLLocation;
@@ -44,6 +55,11 @@ public class MainScreen extends Screen {
 	private boolean open = false;
 	TranslateTransition transition = new TranslateTransition(new Duration(500));
 
+	ObservableList<String> data = FXCollections.observableArrayList(
+			"chocolate", "salmon", "gold", "coral", "darkorchid",
+			"darkgoldenrod", "lightsalmon", "black", "rosybrown", "blue",
+			"blueviolet", "brown");
+
 	public MainScreen() {
 	}
 
@@ -64,6 +80,25 @@ public class MainScreen extends Screen {
 
 			}
 		});
+		slidingMenu.setItems(data);
+		slidingMenu
+				.setCellFactory(new Callback<ListView<String>, ListCell<String>>() {
+					@Override
+					public ListCell<String> call(ListView<String> list) {
+						return new ColorRectCell();
+					}
+				});
+		InputStream inputStream = getClass().getResourceAsStream(
+				"/raw/slidingmenuitems.json");
+		byte[] b = new byte[1024];
+		try {
+			inputStream.read(b);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String string= new String(b);
+		System.out.println(string);
 		imageView.setClip(clip);
 		searchField.focusedProperty().addListener(
 				(observer, oldValue, newValue) -> searchFieldObserver(observer,
@@ -135,6 +170,20 @@ public class MainScreen extends Screen {
 					open = false;
 				}
 			});
+		}
+	}
+
+	static class ColorRectCell extends ListCell<String> {
+		@Override
+		public void updateItem(String item, boolean empty) {
+			super.updateItem(item, empty);
+			Rectangle rect = new Rectangle(100, 20);
+			Text text = new Text(item);
+			StackPane stackPane = new StackPane(rect, text);
+			if (item != null) {
+				rect.setFill(Color.web(item));
+				setGraphic(stackPane);
+			}
 		}
 	}
 }

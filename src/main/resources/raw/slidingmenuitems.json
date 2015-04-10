@@ -1,0 +1,16 @@
+{
+  "menu": [
+    {
+      "name": "running",
+      "image": null
+    },
+    {
+      "name": "all",
+      "image": null
+    },
+    {
+      "name": "civil",
+      "image": null
+    }
+  ]
+}
