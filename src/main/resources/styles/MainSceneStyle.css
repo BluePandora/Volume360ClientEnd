@@ -22,7 +22,7 @@
 	-fx-effect: dropshadow(three-pass-box, rgba(0.0, 0.0, 0.0, 0.5), 10.0,
 		0.0, 2.0, 6.0);
 }
-
+ 
 .fab {
 	-fx-background-color: rgba(0.0, 0.0, 0.0, 0.0);
 	-fx-background-image: url("images/fab_add_new_project.default.png");
