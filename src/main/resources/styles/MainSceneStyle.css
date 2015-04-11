@@ -4,19 +4,23 @@
 
 .action-bar {
 	-fx-background-color: #F26D21;
-	-fx-effect: dropshadow(gaussian, rgba(0.0, 0.0, 0.0, 0.5), 10.0, 0.0, 0.0, 6.0);
+	-fx-effect: dropshadow(gaussian, rgba(0.0, 0.0, 0.0, 0.5), 10.0, 0.0,
+		0.0, 6.0);
 }
 
 .image-button {
-	-fx-effect: dropshadow(gaussian, rgba(0.0, 0.0, 0.0, 0.5), 15.0, 0.0, 2.0, 6.0);
+	-fx-effect: dropshadow(gaussian, rgba(0.0, 0.0, 0.0, 0.5), 15.0, 0.0,
+		2.0, 6.0);
 }
 
 .image-button:hover {
-	-fx-effect: dropshadow(gaussian, rgba(0.0, 0.0, 0.0, 0.6), 20.0, 0.0, 2.0, 6.0);
+	-fx-effect: dropshadow(gaussian, rgba(0.0, 0.0, 0.0, 0.6), 20.0, 0.0,
+		2.0, 6.0);
 }
 
 .image-button:pressed, .image-button:default:hover:pressed {
-	-fx-effect: dropshadow(three-pass-box, rgba(0.0, 0.0, 0.0, 0.5), 10.0, 0.0, 2.0, 6.0);
+	-fx-effect: dropshadow(three-pass-box, rgba(0.0, 0.0, 0.0, 0.5), 10.0,
+		0.0, 2.0, 6.0);
 }
 
 .fab {
@@ -24,15 +28,18 @@
 	-fx-background-image: url("images/fab_add_new_project.default.png");
 	-fx-shape:
 		"M 100, 100 m -75, 0 a 75, 75 0 1, 0 150, 0 a 75, 75 0 1, 0	-150, 0";
-		-fx-effect: dropshadow(gaussian, rgba(0.0, 0.0, 0.0, 0.5), 15.0, 0.0, 2.0, 6.0);
+	-fx-effect: dropshadow(gaussian, rgba(0.0, 0.0, 0.0, 0.5), 15.0, 0.0,
+		2.0, 6.0);
 }
 
 .fab:hover {
-	-fx-effect: dropshadow(gaussian, rgba(0.0, 0.0, 0.0, 0.6), 20.0, 0.0, 2.0, 6.0);
+	-fx-effect: dropshadow(gaussian, rgba(0.0, 0.0, 0.0, 0.6), 20.0, 0.0,
+		2.0, 6.0);
 }
 
 .fab:pressed, .fab:default:hover:pressed {
-	-fx-effect: dropshadow(three-pass-box, rgba(0.0, 0.0, 0.0, 0.5), 10.0, 0.0, 2.0, 6.0);
+	-fx-effect: dropshadow(three-pass-box, rgba(0.0, 0.0, 0.0, 0.5), 10.0,
+		0.0, 2.0, 6.0);
 }
 
 .list-view {
@@ -48,7 +55,8 @@
 	-fx-text-fill: #123456;
 	-fx-font-size: 13.0pt;
 	-fx-font-family: "Museo Sans Rounded 700";
-	-fx-effect: dropshadow(three-pass-box, rgba(0.0, 0.0, 0.0, 0.3), 5.0, 0.0, 1.0, 2.0);
+	-fx-effect: dropshadow(three-pass-box, rgba(0.0, 0.0, 0.0, 0.3), 5.0,
+		0.0, 1.0, 2.0);
 }
 
 .list-cell:odd {
@@ -58,12 +66,14 @@
 	-fx-background-radius: 2.0;
 	-fx-font-size: 13.0pt;
 	-fx-font-family: "Museo Sans Rounded 700";
-	-fx-effect: dropshadow(three-pass-box, rgba(0.0, 0.0, 0.0, 0.3), 5.0, 0.0, 1.0, 2.0);
+	-fx-effect: dropshadow(three-pass-box, rgba(0.0, 0.0, 0.0, 0.3), 5.0,
+		0.0, 1.0, 2.0);
 }
 
 .slide-menu {
 	-fx-background-color: #EAEAEA;
-	-fx-effect: dropshadow(gaussian, rgba(0.0, 0.0, 0.0, 0.6), 20.0, 0.0, 6.0, 5.0);
+	-fx-effect: dropshadow(gaussian, rgba(0.0, 0.0, 0.0, 0.6), 20.0, 0.0,
+		6.0, 5.0);
 }
 
 .slide-menu>.list-cell {
@@ -87,9 +97,7 @@
 	-fx-background-color: #ECA403;
 }
 
-
-
-.log-in-header {	
+.log-in-header {
 	-fx-background-color: rgba(255.0, 255.0, 255.0, 0.92);
 }
 
@@ -144,22 +152,21 @@
 
 .menu-button {
 	-fx-background-color: rgba(0.0, 0.0, 0.0, 0.0);
-		-fx-background-image: url("images/ic_menu_white_18dp.png");
-		-fx-opacity: 0.8;
+	-fx-background-image: url("images/ic_menu_white_18dp.png");
+	-fx-opacity: 0.8;
 	-fx-shape:
 		"M 100, 100 m -75, 0 a 75, 75 0 1, 0 150, 0 a 75, 75 0 1, 0	-150, 0";
 }
 
 .menu-button:hover {
-		-fx-background-color: rgba(0.0, 0.0, 0.0, 0.15);
+	-fx-background-color: rgba(0.0, 0.0, 0.0, 0.15);
 	-fx-opacity: 1.0;
 }
 
 .menu-button:pressed, .menu-button:default:hover:pressed {
-			-fx-background-color: rgba(0.0, 0.0, 0.0, 0.2);
+	-fx-background-color: rgba(0.0, 0.0, 0.0, 0.2);
 	-fx-opacity: 1.0;
 }
-
 
 .menu-button-second {
 	-fx-background-color: rgba(0.0, 0.0, 0.0, 0.0);
@@ -170,11 +177,11 @@
 }
 
 .menu-button-second:hover {
-		-fx-background-color: rgba(0.0, 0.0, 0.0, 0.15);
+	-fx-background-color: rgba(0.0, 0.0, 0.0, 0.15);
 	-fx-opacity: 1.0;
 }
 
 .menu-button-second:pressed, .menu-button-second:default:hover:pressed {
-			-fx-background-color: rgba(0.0, 0.0, 0.0, 0.2);
+	-fx-background-color: rgba(0.0, 0.0, 0.0, 0.2);
 	-fx-opacity: 1.0;
 }

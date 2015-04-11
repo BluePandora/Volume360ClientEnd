@@ -11,7 +11,7 @@
    <children>
       <HBox spacing="25.0">
          <children>
-            <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="slidingListIcon" fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/ic_check_grey600_18dp.png" />
                </image></ImageView>

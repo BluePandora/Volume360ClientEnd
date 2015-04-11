@@ -55,9 +55,7 @@ public class MainScreen extends Screen {
 	TranslateTransition transition = new TranslateTransition(new Duration(500));
 
 	ObservableList<String> data = FXCollections.observableArrayList(
-			"chocolate", "salmon", "gold", "coral", "darkorchid",
-			"darkgoldenrod", "lightsalmon", "black", "rosybrown", "blue",
-			"blueviolet", "brown");
+			"chocolate", "salmon");
 
 	public MainScreen() {
 	}
