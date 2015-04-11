@@ -77,11 +77,7 @@
 		</Pane>
 		<Pane layoutX="1155.0" layoutY="60.0" prefHeight="660.0" prefWidth="125.0" stylesheets="@../styles/MainSceneStyle.css">
 			<children>
-				<ImageView fitHeight="75.0" fitWidth="75.0" layoutX="14.0" layoutY="525.0" pickOnBounds="true" preserveRatio="true" styleClass="image-button">
-					<image>
-						<Image url="@../styles/images/fab_add_new_project.default.png" />
-					</image>
-				</ImageView>
+            <Button layoutX="15.0" layoutY="526.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="74.0" styleClass="fab" />
 			</children>
 		</Pane>
 	</children>

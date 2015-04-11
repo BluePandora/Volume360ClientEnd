@@ -19,6 +19,22 @@
 	-fx-effect: dropshadow(three-pass-box, rgba(0.0, 0.0, 0.0, 0.5), 10.0, 0.0, 2.0, 6.0);
 }
 
+.fab {
+	-fx-background-color: rgba(0.0, 0.0, 0.0, 0.0);
+	-fx-background-image: url("images/fab_add_new_project.default.png");
+	-fx-shape:
+		"M 100, 100 m -75, 0 a 75, 75 0 1, 0 150, 0 a 75, 75 0 1, 0	-150, 0";
+		-fx-effect: dropshadow(gaussian, rgba(0.0, 0.0, 0.0, 0.5), 15.0, 0.0, 2.0, 6.0);
+}
+
+.fab:hover {
+	-fx-effect: dropshadow(gaussian, rgba(0.0, 0.0, 0.0, 0.6), 20.0, 0.0, 2.0, 6.0);
+}
+
+.fab:pressed, .fab:default:hover:pressed {
+	-fx-effect: dropshadow(three-pass-box, rgba(0.0, 0.0, 0.0, 0.5), 10.0, 0.0, 2.0, 6.0);
+}
+
 .list-view {
 	-fx-background-color: #0000ff;
 	-fx-background-color: rgba(0.0, 0.0, 0.0, 0.0);
