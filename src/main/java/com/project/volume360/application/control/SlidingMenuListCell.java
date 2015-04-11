@@ -51,7 +51,7 @@ public class SlidingMenuListCell extends ListCell<String> {
 
 	@Override
 	public void updateItem(String item, boolean empty) {
-		super.updateItem(item, empty);
+		super.updateItem(item, empty); 
 		if (item != null) {
 			File file = new File(System.getProperty("user.dir")
 					+ "/src/main/resources/images/ic_search_black_18dp.png");
