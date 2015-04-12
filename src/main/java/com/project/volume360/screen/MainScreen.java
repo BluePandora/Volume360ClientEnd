@@ -57,8 +57,9 @@ public class MainScreen extends Screen {
 	private boolean searchPaneOpened = false;
 	TranslateTransition transition = new TranslateTransition(new Duration(500));
 
-	ObservableList<String> data = FXCollections.observableArrayList(
-			"chocolate","salmon", "chocolate", "salmon", "chocolate", "salmon");
+	ObservableList<String> data = FXCollections
+			.observableArrayList("chocolate", "salmon", "chocolate", "salmon",
+					"chocolate", "salmon");
 
 	public MainScreen() {
 	}
@@ -71,6 +72,7 @@ public class MainScreen extends Screen {
 		clip.setTranslateX(imageView.getLayoutBounds().getWidth() / 2);
 		clip.setTranslateY(imageView.getLayoutBounds().getWidth() / 2);
 		slidingMenu.setItems(data);
+		slidingMenu.getSelectionModel().selectFirst();
 		slidingMenu
 				.setCellFactory(new Callback<ListView<String>, ListCell<String>>() {
 					@Override
@@ -78,7 +80,7 @@ public class MainScreen extends Screen {
 						return SlidingMenuListCell.getSlidingMenuListCell();
 					}
 				});
-		slidingMenu.setPrefHeight(66.8* data.size());
+		slidingMenu.setPrefHeight(66.8 * data.size());
 		InputStream inputStream = getClass().getResourceAsStream(
 				"/raw/slidingmenuitems.json");
 		byte[] b = new byte[1024];
@@ -176,21 +178,6 @@ public class MainScreen extends Screen {
 					slideMenuOpened = false;
 				}
 			});
-		}
-
-	}
-
-	static class ColorRectCell extends ListCell<String> {
-		@Override
-		public void updateItem(String item, boolean empty) {
-			super.updateItem(item, empty);
-			Rectangle rect = new Rectangle(100, 20);
-			Text text = new Text(item);
-			StackPane stackPane = new StackPane(rect, text);
-			if (item != null) {
-				rect.setFill(Color.web(item));
-				setGraphic(stackPane);
-			}
 		}
 	}
 }

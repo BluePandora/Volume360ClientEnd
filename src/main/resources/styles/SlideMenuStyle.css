@@ -5,13 +5,28 @@
 .list-cell {
 	-fx-background-color: rgba(0, 0, 0, 0);
 	-fx-padding: 20 25 10 25;
-	-fx-text-fill: #123456;
+	-fx-text-fill: #80ffff;
 	-fx-font-size: 13pt;
 	-fx-font-family: "Museo Sans Rounded 700";
 }
 
+.list-cell-text {
+	-fx-text-fill: #123456;
+	-fx-padding: 0 0 0 50;
+}
+
 .list-cell:hover {
 	-fx-background-color: #CACACA;
+}
+
+.list-cell-text:pressed, .list-cell-text:default:hover:pressed {
+	-fx-text-fill: #ff80ff;
+	-fx-opacity: 1.0;
+}
+
+.list-cell-text:selected {
+	-fx-text-fill: #F26D21;
+	-fx-opacity: 1.0;
 }
 
 .slide-menu-background {

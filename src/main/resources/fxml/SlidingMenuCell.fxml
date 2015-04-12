@@ -13,12 +13,14 @@
          <children>
             <ImageView fx:id="slidingListIcon" fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/ic_check_grey600_18dp.png" />
-               </image></ImageView>
-            <Label fx:id="itemText" prefHeight="36.0" text="Done">
+                  <Image url="@../images/ic_ongoing_F26D23.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="itemText" prefHeight="36.0" stylesheets="@../styles/SlideMenuStyle.css" text="Done">
                <font>
                   <Font name="MuseoSansRounded-700" size="18.0" />
-               </font></Label>
+               </font>
+            </Label>
          </children>
       </HBox>
    </children>

@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import com.project.volume360.screen.annotation.FXMLLocation;
 
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
@@ -46,21 +47,34 @@ public class SlidingMenuListCell extends ListCell<String> {
 		}
 		SlidingMenuListCell slidingMenuListCell = (SlidingMenuListCell) fxmlLoader
 				.getController();
-		//slidingMenuListCell.setPrefHeight(75);
+		// slidingMenuListCell.setPrefHeight(75);
 		return slidingMenuListCell;
+	}
+
+	@FXML
+	private void initialize() {
+		focusedProperty().addListener(
+				(observer, oldValue, newValue) -> searchFieldObserver(observer,
+						oldValue, newValue));
+	}
+
+	private void searchFieldObserver(
+			ObservableValue<? extends Boolean> observer, Boolean oldValue,
+			Boolean newValue) {
+		if (!newValue) {
+			itemText.setStyle("-fx-text-fill: #123456;");
+		} else {
+			itemText.setStyle("-fx-text-fill: #F26D21;");
+		}
+		System.out.println(getItem());
 	}
 
 	@Override
 	public void updateItem(String item, boolean empty) {
-		super.updateItem(item, empty); 
+		super.updateItem(item, empty);
 		if (item != null) {
 			System.out.println(getHeight());
-			File file = new File(System.getProperty("user.dir")
-					+ "/src/main/resources/images/ic_search_black_18dp.png");
-			Image image = new Image(file.toURI().toString());
-			slidingListIcon.setImage(image);
 			itemText.setText(item);
-			itemText.setStyle("-fx-text-fill: #F26D21;");
 			setGraphic(rootPane);
 		}
 	}
