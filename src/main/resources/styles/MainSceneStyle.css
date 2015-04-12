@@ -22,7 +22,7 @@
 	-fx-effect: dropshadow(three-pass-box, rgba(0.0, 0.0, 0.0, 0.5), 10.0,
 		0.0, 2.0, 6.0);
 }
- 
+
 .fab {
 	-fx-background-color: rgba(0.0, 0.0, 0.0, 0.0);
 	-fx-background-image: url("images/fab_add_new_project.default.png");
@@ -68,29 +68,6 @@
 	-fx-font-family: "Museo Sans Rounded 700";
 	-fx-effect: dropshadow(three-pass-box, rgba(0.0, 0.0, 0.0, 0.3), 5.0,
 		0.0, 1.0, 2.0);
-}
-
-.slide-menu {
-	-fx-background-color: #EAEAEA;
-	-fx-effect: dropshadow(gaussian, rgba(0.0, 0.0, 0.0, 0.6), 20.0, 0.0,
-		6.0, 5.0);
-}
-
-.slide-menu>.list-cell {
-	-fx-padding: 20.0 25.0 10.0 25.0;
-	-fx-background-insets: 10.0 20.0 2.0 20.0;
-	-fx-background-radius: 2.0;
-	-fx-text-fill: #123456;
-	-fx-font-size: 13.0pt;
-	-fx-font-family: "Museo Sans Rounded 700";
-}
-
-.slide-menu>.list-cell:odd {
-	-fx-padding: 20.0 25.0 10.0 25.0;
-	-fx-background-insets: 10.0 20.0 2.0 20.0;
-	-fx-background-radius: 2.0;
-	-fx-font-size: 13.0pt;
-	-fx-font-family: "Museo Sans Rounded 700";
 }
 
 .slide-menu-front {

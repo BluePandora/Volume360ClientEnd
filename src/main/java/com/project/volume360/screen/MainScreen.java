@@ -51,11 +51,14 @@ public class MainScreen extends Screen {
 	@FXML
 	private Pane actionBar;
 
-	private boolean open = false;
+	@FXML
+	private Pane slidingMenuPane;
+	private boolean slideMenuOpened = false;
+	private boolean searchPaneOpened = false;
 	TranslateTransition transition = new TranslateTransition(new Duration(500));
 
 	ObservableList<String> data = FXCollections.observableArrayList(
-			"chocolate", "salmon");
+			"chocolate","salmon", "chocolate", "salmon", "chocolate", "salmon");
 
 	public MainScreen() {
 	}
@@ -75,6 +78,7 @@ public class MainScreen extends Screen {
 						return SlidingMenuListCell.getSlidingMenuListCell();
 					}
 				});
+		slidingMenu.setPrefHeight(66.8* data.size());
 		InputStream inputStream = getClass().getResourceAsStream(
 				"/raw/slidingmenuitems.json");
 		byte[] b = new byte[1024];
@@ -95,6 +99,7 @@ public class MainScreen extends Screen {
 	private Object searchFieldObserver(
 			ObservableValue<? extends Boolean> observer, Boolean oldValue,
 			Boolean newValue) {
+		searchPaneOpened = newValue;
 		if (newValue) {
 			File file = new File(System.getProperty("user.dir")
 					+ "/src/main/resources/images/ic_search_black_18dp.png");
@@ -103,7 +108,8 @@ public class MainScreen extends Screen {
 			actionBar.setStyle("-fx-background-color: #BCBCBC;");
 			menuButton.getStyleClass().add("menu-button-second");
 			menuButton.getStyleClass().remove(1);
-			String images = "images/ic_arrow_back_black_24dp.png";
+			if (slideMenuOpened)
+				slidingMenuTransition();
 		} else {
 			File file = new File(System.getProperty("user.dir")
 					+ "/src/main/resources/images/ic_search_white_18dp.png");
@@ -135,8 +141,14 @@ public class MainScreen extends Screen {
 	public void onMenuPressed(ActionEvent actionEvent) {
 		System.out.println(getPrimaryStage().getWidth() + " "
 				+ getPrimaryStage().getHeight());
-		transition.setNode(slidingMenu);
-		if (!open) {
+		System.out.println(searchPaneOpened);
+		if (!searchPaneOpened)
+			slidingMenuTransition();
+	}
+
+	private void slidingMenuTransition() {
+		transition.setNode(slidingMenuPane);
+		if (!slideMenuOpened) {
 			transition.setFromX(0);
 			transition.setToX(270);
 			transition.setInterpolator(Interpolator.EASE_BOTH);
@@ -144,7 +156,11 @@ public class MainScreen extends Screen {
 
 				@Override
 				public void handle(ActionEvent event) {
-					open = true;
+					slideMenuOpened = true;
+					if (searchPaneOpened) {
+						slidingMenuTransition();
+					}
+
 				}
 			});
 			transition.play();
@@ -157,10 +173,11 @@ public class MainScreen extends Screen {
 
 				@Override
 				public void handle(ActionEvent event) {
-					open = false;
+					slideMenuOpened = false;
 				}
 			});
 		}
+
 	}
 
 	static class ColorRectCell extends ListCell<String> {

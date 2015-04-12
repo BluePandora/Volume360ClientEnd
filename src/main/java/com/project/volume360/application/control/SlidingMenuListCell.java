@@ -46,6 +46,7 @@ public class SlidingMenuListCell extends ListCell<String> {
 		}
 		SlidingMenuListCell slidingMenuListCell = (SlidingMenuListCell) fxmlLoader
 				.getController();
+		//slidingMenuListCell.setPrefHeight(75);
 		return slidingMenuListCell;
 	}
 
@@ -53,6 +54,7 @@ public class SlidingMenuListCell extends ListCell<String> {
 	public void updateItem(String item, boolean empty) {
 		super.updateItem(item, empty); 
 		if (item != null) {
+			System.out.println(getHeight());
 			File file = new File(System.getProperty("user.dir")
 					+ "/src/main/resources/images/ic_search_black_18dp.png");
 			Image image = new Image(file.toURI().toString());
