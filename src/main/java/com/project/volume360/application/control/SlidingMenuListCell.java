@@ -41,12 +41,12 @@ public class SlidingMenuListCell extends ListCell<String> {
 				.getResource(fxmlLocation.location()));
 		try {
 			fxmlLoader.load();
-		} catch (IOException e) {
+		 } catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		SlidingMenuListCell slidingMenuListCell = (SlidingMenuListCell) fxmlLoader
-				.getController();
+				.getController(); 
 		// slidingMenuListCell.setPrefHeight(75);
 		return slidingMenuListCell;
 	}
