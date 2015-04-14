@@ -59,6 +59,7 @@ public class MainScreen extends Screen {
 
 	ObservableList<String> data = FXCollections
 			.observableArrayList("chocolate", "salmon", "chocolate", "salmon",
+					"chocolate", "salmon","chocolate", "salmon", "chocolate", "salmon",
 					"chocolate", "salmon");
 
 	public MainScreen() {
