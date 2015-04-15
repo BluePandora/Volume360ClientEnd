@@ -20,11 +20,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Text;
 import javafx.util.Callback;
 import javafx.util.Duration;
 
@@ -57,10 +53,10 @@ public class MainScreen extends Screen {
 	private boolean searchPaneOpened = false;
 	TranslateTransition transition = new TranslateTransition(new Duration(500));
 
-	ObservableList<String> data = FXCollections
-			.observableArrayList("chocolate", "salmon", "chocolate", "salmon",
-					"chocolate", "salmon","chocolate", "salmon", "chocolate", "salmon",
-					"chocolate", "salmon");
+	ObservableList<String> data = FXCollections.observableArrayList(
+			"chocolate", "salmon", "chocolate", "salmon", "chocolate",
+			"salmon", "chocolate", "salmon", "chocolate", "salmon",
+			"chocolate", "salmon");
 
 	public MainScreen() {
 	}

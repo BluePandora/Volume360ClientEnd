@@ -6,12 +6,21 @@
 	-fx-background-color: #f2f2f2;
 	-fx-background-radius: 2;
 	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0.0, 0, 3);
+	/*	-fx-shape:"M440.789,174.684H138.474c-6.627,0-12,5.373-12,12v184.794l-12.772,12.772l12.772,12.772v19.609
+	c0,6.627,5.373,12,12,12h302.316c6.627,0,12-5.373,12-12V186.684C452.789,180.057,447.417,174.684,440.789,174.684z";*/
 }
 
 .log-in-header {
 	-fx-background-color: rgba(255, 255, 255, .92);
 }
 
+/*@font-face {
+	font-family: '04B_19';
+	src: url('04B_19_.TTF');
+}*/
+/*.text {
+	-fx-font-family: "04B_19";
+}*/
 .text-field {
 	-fx-background-radius: 2;
 	-fx-background-color: #ffffff;
@@ -21,10 +30,11 @@
 }
 
 .text-field:hover {
-	-fx-effect: innershadow(gaussian,  #007495, 10, 0.0, 0, 0);
+	-fx-effect: innershadow(gaussian, #007495, 10, 0.0, 0, 0);
 }
+
 .text-field:focused {
-	-fx-effect: innershadow(gaussian,  #007495, 7, 0.0, 0, 0);
+	-fx-effect: innershadow(gaussian, #007495, 7, 0.0, 0, 0);
 }
 
 .password-field {

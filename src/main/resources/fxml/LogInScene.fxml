@@ -41,6 +41,11 @@
                      <image>
                         <Image url="@../images/volume360.png" />
                      </image></ImageView>
+                  <Text fill="#00144a" layoutX="163.0" layoutY="381.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Forgot Password?" underline="true">
+                     <font>
+                        <Font name="Roboto Regular" size="20.0" />
+                     </font>
+                  </Text>
                      </children>
                   </Pane>
                </children>
