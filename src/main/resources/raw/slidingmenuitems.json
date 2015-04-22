@@ -1,16 +1,1 @@
-{
-  "menu": [
-    {
-      "name": "running",
-      "image": null
-    },
-    {
-      "name": "all",
-      "image": null
-    },
-    {
-      "name": "civil",
-      "image": null
-    }
-  ]
-}
+{"slidingMenuItems":[{"icon":"Running","title":"null","divider":"false"},{"icon":"All","title":"null","divider":"false"},{"icon":"Done","title":"null","divider":"true"},{"icon":"Civil","title":"null","divider":"false"},{"icon":"Electrical","title":"null","divider":"false"},{"icon":"Networking","title":"null","divider":"false"},{"icon":"Fire and Safety","title":"null","divider":"true"}]}

@@ -3,6 +3,10 @@ package com.project.volume360.screen;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javafx.animation.Interpolator;
 import javafx.animation.TranslateTransition;
@@ -24,7 +28,14 @@ import javafx.scene.shape.Circle;
 import javafx.util.Callback;
 import javafx.util.Duration;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.GsonBuilder;
 import com.project.volume360.application.control.SlidingMenuListCell;
+import com.project.volume360.application.item.SlideMenu;
+import com.project.volume360.application.item.SlidingMenuItem;
 import com.project.volume360.screen.annotation.FXMLLocation;
 
 @FXMLLocation(location = "/fxml/MainScene.fxml")
@@ -54,9 +65,11 @@ public class MainScreen extends Screen {
 	TranslateTransition transition = new TranslateTransition(new Duration(500));
 
 	ObservableList<String> data = FXCollections.observableArrayList(
-			"chocolate", "salmon", "chocolate", "salmon", "chocolate",
+			"chocolate", "salmon", "chocolate", "salmon", "Fire & Safety",
 			"salmon", "chocolate", "salmon", "chocolate", "salmon",
 			"chocolate", "salmon");
+
+	ObservableList<SlidingMenuItem> datas = FXCollections.observableArrayList();
 
 	public MainScreen() {
 	}
@@ -87,8 +100,12 @@ public class MainScreen extends Screen {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		String string = new String(b);
+		Gson gson = new GsonBuilder().create();
+		String string = "{\"slidingMenuItems\":[{\"icon\":\"Running\",\"title\":\"null\",\"divider\":\"false\"},{\"icon\":\"All\",\"title\":\"null\",\"divider\":\"false\"},{\"icon\":\"Done\",\"title\":\"null\",\"divider\":\"true\"},{\"icon\":\"Civil\",\"title\":\"null\",\"divider\":\"false\"},{\"icon\":\"Electrical\",\"title\":\"null\",\"divider\":\"false\"},{\"icon\":\"Networking\",\"title\":\"null\",\"divider\":\"false\"},{\"icon\":\"Fire and Safety\",\"title\":\"null\",\"divider\":\"true\"}]}";
+		System.out.println(new String(b).compareTo(string));
 		System.out.println(string);
+		SlideMenu slideMenu = gson.fromJson(string, SlideMenu.class);
+		System.out.println(gson.toJson(slideMenu));
 		imageView.setClip(clip);
 		searchField.focusedProperty().addListener(
 				(observer, oldValue, newValue) -> searchFieldObserver(observer,

@@ -4,14 +4,17 @@ public class SlidingMenuItem {
 
 	private String icon;
 	private String title;
+	private String divider;
 
 	/**
 	 * @param icon
 	 * @param title
+	 * @param divider
 	 */
-	public SlidingMenuItem(String icon, String title) {
+	public SlidingMenuItem(String icon, String title, String divider) {
 		this.icon = icon;
 		this.title = title;
+		this.divider = divider;
 	}
 
 	/**
@@ -44,6 +47,21 @@ public class SlidingMenuItem {
 		this.title = title;
 	}
 
+	/**
+	 * @return the divider
+	 */
+	public String getDivider() {
+		return divider;
+	}
+
+	/**
+	 * @param divider
+	 *            the divider to set
+	 */
+	public void setDivider(String divider) {
+		this.divider = divider;
+	}
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -51,7 +69,8 @@ public class SlidingMenuItem {
 	 */
 	@Override
 	public String toString() {
-		return "SlidingMenuItem [icon=" + icon + ", title=" + title + "]";
+		return "SlidingMenuItem [icon=" + icon + ", title=" + title
+				+ ", divider=" + divider + "]";
 	}
 
 }
