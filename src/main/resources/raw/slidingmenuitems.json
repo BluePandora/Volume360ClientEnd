@@ -1,1 +1,38 @@
-{"slidingMenuItems":[{"icon":"Running","title":"null","divider":"false"},{"icon":"All","title":"null","divider":"false"},{"icon":"Done","title":"null","divider":"true"},{"icon":"Civil","title":"null","divider":"false"},{"icon":"Electrical","title":"null","divider":"false"},{"icon":"Networking","title":"null","divider":"false"},{"icon":"Fire and Safety","title":"null","divider":"true"}]}
+{
+	"slidingMenuItems":[
+		{
+			"title":"Running",
+			"icon":"null",
+			"divider":"false"
+		},
+		{				
+			"title":"All",
+			"icon":"null",
+			"divider":"false"
+		},
+		{
+			"title":"Done",
+			"icon":"null",
+			"divider":"true"
+		},
+		{
+			"title":"Civil",
+			"icon":"null",
+			"divider":"false"},
+		{
+			"title":"Electrical",
+			"icon":"null",
+			"divider":"false"
+		},
+		{
+			"title":"Networking",
+			"icon":"null",
+			"divider":"false"
+		},
+		{
+			"title":"Fire and Safety",
+			"icon":"null",
+			"divider":"true"
+		}
+	]
+}

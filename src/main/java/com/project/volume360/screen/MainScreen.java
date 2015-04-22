@@ -53,7 +53,7 @@ public class MainScreen extends Screen {
 	private TextField searchField;
 
 	@FXML
-	private ListView<String> slidingMenu;
+	private ListView<SlidingMenuItem> slidingMenu;
 
 	@FXML
 	private Pane actionBar;
@@ -69,7 +69,8 @@ public class MainScreen extends Screen {
 			"salmon", "chocolate", "salmon", "chocolate", "salmon",
 			"chocolate", "salmon");
 
-	ObservableList<SlidingMenuItem> datas = FXCollections.observableArrayList();
+	ObservableList<SlidingMenuItem> menuItem = FXCollections
+			.observableArrayList();
 
 	public MainScreen() {
 	}
@@ -81,12 +82,13 @@ public class MainScreen extends Screen {
 		clip.setRadius(imageView.getLayoutBounds().getWidth() / 2);
 		clip.setTranslateX(imageView.getLayoutBounds().getWidth() / 2);
 		clip.setTranslateY(imageView.getLayoutBounds().getWidth() / 2);
-		slidingMenu.setItems(data);
+		slidingMenu.setItems(menuItem);
 		slidingMenu.getSelectionModel().selectFirst();
 		slidingMenu
-				.setCellFactory(new Callback<ListView<String>, ListCell<String>>() {
+				.setCellFactory(new Callback<ListView<SlidingMenuItem>, ListCell<SlidingMenuItem>>() {
 					@Override
-					public ListCell<String> call(ListView<String> list) {
+					public ListCell<SlidingMenuItem> call(
+							ListView<SlidingMenuItem> list) {
 						return SlidingMenuListCell.getSlidingMenuListCell();
 					}
 				});
@@ -101,10 +103,9 @@ public class MainScreen extends Screen {
 			e.printStackTrace();
 		}
 		Gson gson = new GsonBuilder().create();
-		String string = "{\"slidingMenuItems\":[{\"icon\":\"Running\",\"title\":\"null\",\"divider\":\"false\"},{\"icon\":\"All\",\"title\":\"null\",\"divider\":\"false\"},{\"icon\":\"Done\",\"title\":\"null\",\"divider\":\"true\"},{\"icon\":\"Civil\",\"title\":\"null\",\"divider\":\"false\"},{\"icon\":\"Electrical\",\"title\":\"null\",\"divider\":\"false\"},{\"icon\":\"Networking\",\"title\":\"null\",\"divider\":\"false\"},{\"icon\":\"Fire and Safety\",\"title\":\"null\",\"divider\":\"true\"}]}";
-		System.out.println(new String(b).compareTo(string));
-		System.out.println(string);
-		SlideMenu slideMenu = gson.fromJson(string, SlideMenu.class);
+		String string2 = new String(b).trim();
+		SlideMenu slideMenu = gson.fromJson(string2, SlideMenu.class);
+		menuItem.addAll(slideMenu.getSlidingMenuItems());
 		System.out.println(gson.toJson(slideMenu));
 		imageView.setClip(clip);
 		searchField.focusedProperty().addListener(

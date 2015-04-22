@@ -7,21 +7,26 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="rootPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.volume360.application.control.SlidingMenuListCell">
+<AnchorPane fx:id="rootPane" prefWidth="218.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.volume360.application.control.SlidingMenuListCell">
    <children>
-      <HBox spacing="25.0">
+      <VBox spacing="5.0">
          <children>
-            <ImageView fx:id="slidingListIcon" fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/ic_ongoing_F26D23.png" />
-               </image>
-            </ImageView>
-            <Label fx:id="itemText" prefHeight="36.0" stylesheets="@../styles/SlideMenuStyle.css" text="Done">
-               <font>
-                  <Font name="MuseoSansRounded-700" size="18.0" />
-               </font>
-            </Label>
+            <HBox spacing="25.0">
+               <children>
+                  <ImageView fx:id="slidingListIcon" fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/ic_ongoing_F26D23.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="itemText" prefHeight="36.0" stylesheets="@../styles/SlideMenuStyle.css" text="Done">
+                     <font>
+                        <Font name="MuseoSansRounded-700" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Pane prefHeight="1.0" prefWidth="218.0" style="-fx-background-color: #AAAAAA;" />
          </children>
-      </HBox>
+      </VBox>
    </children>
 </AnchorPane>

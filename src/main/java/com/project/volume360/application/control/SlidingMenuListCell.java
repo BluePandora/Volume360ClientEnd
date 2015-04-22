@@ -3,6 +3,7 @@ package com.project.volume360.application.control;
 import java.io.File;
 import java.io.IOException;
 
+import com.project.volume360.application.item.SlidingMenuItem;
 import com.project.volume360.screen.annotation.FXMLLocation;
 
 import javafx.beans.value.ObservableValue;
@@ -19,7 +20,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 
 @FXMLLocation(location = "/fxml/SlidingMenuCell.fxml")
-public class SlidingMenuListCell extends ListCell<String> {
+public class SlidingMenuListCell extends ListCell<SlidingMenuItem> {
 
 	@FXML
 	private Label itemText;
@@ -41,12 +42,12 @@ public class SlidingMenuListCell extends ListCell<String> {
 				.getResource(fxmlLocation.location()));
 		try {
 			fxmlLoader.load();
-		 } catch (IOException e) {
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		SlidingMenuListCell slidingMenuListCell = (SlidingMenuListCell) fxmlLoader
-				.getController(); 
+				.getController();
 		// slidingMenuListCell.setPrefHeight(75);
 		return slidingMenuListCell;
 	}
@@ -70,11 +71,11 @@ public class SlidingMenuListCell extends ListCell<String> {
 	}
 
 	@Override
-	public void updateItem(String item, boolean empty) {
+	public void updateItem(SlidingMenuItem item, boolean empty) {
 		super.updateItem(item, empty);
 		if (item != null) {
 			System.out.println(getHeight());
-			itemText.setText(item);
+			itemText.setText(item.getTitle());
 			setGraphic(rootPane);
 		}
 	}
