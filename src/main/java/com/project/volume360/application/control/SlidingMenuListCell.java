@@ -14,10 +14,7 @@ import javafx.scene.control.ListCell;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Text;
+import javafx.scene.layout.Pane;
 
 @FXMLLocation(location = "/fxml/SlidingMenuCell.fxml")
 public class SlidingMenuListCell extends ListCell<SlidingMenuItem> {
@@ -30,6 +27,9 @@ public class SlidingMenuListCell extends ListCell<SlidingMenuItem> {
 
 	@FXML
 	private ImageView slidingListIcon;
+
+	@FXML
+	private Pane dividerPane;
 
 	public SlidingMenuListCell() {
 	}
@@ -67,7 +67,6 @@ public class SlidingMenuListCell extends ListCell<SlidingMenuItem> {
 		} else {
 			itemText.setStyle("-fx-text-fill: #F26D21;");
 		}
-		System.out.println(getItem());
 	}
 
 	@Override
@@ -77,6 +76,17 @@ public class SlidingMenuListCell extends ListCell<SlidingMenuItem> {
 			System.out.println(getHeight());
 			itemText.setText(item.getTitle());
 			setGraphic(rootPane);
+			if (item.getIcon() != null) {
+				File file = new File(System.getProperty("user.dir")
+						+ "/src/main/resources/images/" + item.getIcon());
+				Image image = new Image(file.toURI().toString());
+				slidingListIcon.setImage(image);
+			}
+			if (item.hasDivider()) {
+				dividerPane.setVisible(true);
+			} else {
+				dividerPane.setVisible(false);
+			}
 		}
 	}
 }

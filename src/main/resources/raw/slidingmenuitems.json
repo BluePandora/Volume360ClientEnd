@@ -2,37 +2,38 @@
 	"slidingMenuItems":[
 		{
 			"title":"Running",
-			"icon":"null",
-			"divider":"false"
+			"icon":"ic_ongoing_24dp.png",
+			"divider": false
 		},
 		{				
 			"title":"All",
-			"icon":"null",
-			"divider":"false"
+			"icon":null,
+			"divider": false
 		},
 		{
 			"title":"Done",
-			"icon":"null",
-			"divider":"true"
+			"icon": "ic_done_24dp.png",
+			"divider": true
 		},
 		{
 			"title":"Civil",
-			"icon":"null",
-			"divider":"false"},
+			"icon": null,
+			"divider":false
+		},
 		{
 			"title":"Electrical",
-			"icon":"null",
-			"divider":"false"
+			"icon": null,
+			"divider": false
 		},
 		{
 			"title":"Networking",
-			"icon":"null",
-			"divider":"false"
+			"icon": null,
+			"divider": false
 		},
 		{
 			"title":"Fire and Safety",
-			"icon":"null",
-			"divider":"true"
+			"icon": null,
+			"divider": true
 		}
 	]
 }

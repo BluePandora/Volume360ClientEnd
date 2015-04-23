@@ -4,14 +4,14 @@ public class SlidingMenuItem {
 
 	private String icon;
 	private String title;
-	private String divider;
+	private boolean divider;
 
 	/**
 	 * @param icon
 	 * @param title
 	 * @param divider
 	 */
-	public SlidingMenuItem(String icon, String title, String divider) {
+	public SlidingMenuItem(String icon, String title, boolean divider) {
 		this.icon = icon;
 		this.title = title;
 		this.divider = divider;
@@ -50,7 +50,7 @@ public class SlidingMenuItem {
 	/**
 	 * @return the divider
 	 */
-	public String getDivider() {
+	public boolean hasDivider() {
 		return divider;
 	}
 
@@ -58,7 +58,7 @@ public class SlidingMenuItem {
 	 * @param divider
 	 *            the divider to set
 	 */
-	public void setDivider(String divider) {
+	public void setDivider(boolean divider) {
 		this.divider = divider;
 	}
 

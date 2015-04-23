@@ -12,6 +12,7 @@ public class MainApp extends Application implements ApplicationListener {
 
 	ScreenFactory screenFactory;
 	private Stage primaryStage;
+	private Admin admin;
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -24,7 +25,7 @@ public class MainApp extends Application implements ApplicationListener {
 		changeScene(LOG_IN_SCENE);
 		primaryStage.show();
 	}
- 
+
 	/**
 	 * The main() method is ignored in correctly deployed JavaFX application.
 	 * main() serves only as fallback in case the application can not be
@@ -59,14 +60,13 @@ public class MainApp extends Application implements ApplicationListener {
 
 	@Override
 	public void savePersonDataToFile(Admin admin) {
-		// TODO Auto-generated method stub
+		this.admin = admin;
 
 	}
 
 	@Override
 	public Admin loadPersonDataFromFile() {
-		// TODO Auto-generated method stub
-		return null;
+		return admin;
 	}
 
 }

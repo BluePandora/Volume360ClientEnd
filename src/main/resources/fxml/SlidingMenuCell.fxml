@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -9,24 +10,20 @@
 
 <AnchorPane fx:id="rootPane" prefWidth="218.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.volume360.application.control.SlidingMenuListCell">
    <children>
-      <VBox spacing="5.0">
+      <HBox spacing="25.0" styleClass="list-cell-holder" stylesheets="@../styles/SlideMenuStyle.css">
          <children>
-            <HBox spacing="25.0">
-               <children>
-                  <ImageView fx:id="slidingListIcon" fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/ic_ongoing_F26D23.png" />
-                     </image>
-                  </ImageView>
-                  <Label fx:id="itemText" prefHeight="36.0" stylesheets="@../styles/SlideMenuStyle.css" text="Done">
-                     <font>
-                        <Font name="MuseoSansRounded-700" size="18.0" />
-                     </font>
-                  </Label>
-               </children>
-            </HBox>
-            <Pane prefHeight="1.0" prefWidth="218.0" style="-fx-background-color: #AAAAAA;" />
+            <ImageView fx:id="slidingListIcon" fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/ic_ongoing_24dp.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="itemText" prefHeight="36.0" stylesheets="@../styles/SlideMenuStyle.css" text="Done">
+               <font>
+                  <Font name="MuseoSansRounded-700" size="18.0" />
+               </font>
+            </Label>
          </children>
-      </VBox>
+      </HBox>
+      <Pane fx:id="dividerPane" layoutY="65.0" prefHeight="1.0" prefWidth="225.0" style="-fx-background-color: #AAAAAA;" />
    </children>
 </AnchorPane>

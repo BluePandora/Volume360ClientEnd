@@ -4,10 +4,14 @@
 
 .list-cell {
 	-fx-background-color: rgba(0, 0, 0, 0);
-	-fx-padding: 20 25 10 25;
+	-fx-padding: 0;
 	-fx-text-fill: #80ffff;
 	-fx-font-size: 13pt;
 	-fx-font-family: "Museo Sans Rounded 700";
+}
+
+.list-cell-holder {
+	-fx-padding: 20 25 0 25;
 }
 
 .list-cell-text {
