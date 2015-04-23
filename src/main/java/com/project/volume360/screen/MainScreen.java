@@ -3,10 +3,6 @@ package com.project.volume360.screen;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.List;
 
 import javafx.animation.Interpolator;
 import javafx.animation.TranslateTransition;
@@ -24,19 +20,19 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Circle;
 import javafx.util.Callback;
 import javafx.util.Duration;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
 import com.google.gson.GsonBuilder;
 import com.project.volume360.application.control.SlidingMenuListCell;
+import com.project.volume360.application.item.NewProject;
 import com.project.volume360.application.item.SlideMenu;
 import com.project.volume360.application.item.SlidingMenuItem;
 import com.project.volume360.screen.annotation.FXMLLocation;
+import com.project.volume360.screen.factory.ScreenFactory;
 
 @FXMLLocation(location = "/fxml/MainScene.fxml")
 public class MainScreen extends Screen {
@@ -59,10 +55,17 @@ public class MainScreen extends Screen {
 	private Pane actionBar;
 
 	@FXML
+	private StackPane newProjectWindowHolder;
+
+	@FXML
 	private Pane slidingMenuPane;
 	private boolean slideMenuOpened = false;
+	private boolean newProjectOpened = false;
 	private boolean searchPaneOpened = false;
-	TranslateTransition transition = new TranslateTransition(new Duration(500));
+	TranslateTransition slideMenuTransition = new TranslateTransition(
+			new Duration(500));
+	TranslateTransition newProjectTransition = new TranslateTransition(
+			new Duration(500));
 
 	ObservableList<String> data = FXCollections.observableArrayList(
 			"chocolate", "salmon", "chocolate", "salmon", "Fire & Safety",
@@ -102,6 +105,11 @@ public class MainScreen extends Screen {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		ScreenFactory screenFactory = new ScreenFactory();
+		NewProjectWindow newProjectWindow = (NewProjectWindow) screenFactory
+				.getScreen(getPrimaryStage(), NewProjectWindow.class);
+		newProjectWindowHolder.getChildren()
+				.add(newProjectWindow.getRootPane());
 		Gson gson = new GsonBuilder().create();
 		String string2 = new String(b).trim();
 		SlideMenu slideMenu = gson.fromJson(string2, SlideMenu.class);
@@ -163,13 +171,21 @@ public class MainScreen extends Screen {
 			slidingMenuTransition();
 	}
 
+	@FXML
+	public void newProjectCreate(ActionEvent actionEvent) {
+		System.out.println(getPrimaryStage().getWidth() + " "
+				+ getPrimaryStage().getHeight());
+		System.out.println(newProjectOpened);
+		newProjectTransition();
+	}
+
 	private void slidingMenuTransition() {
-		transition.setNode(slidingMenuPane);
+		slideMenuTransition.setNode(slidingMenuPane);
 		if (!slideMenuOpened) {
-			transition.setFromX(0);
-			transition.setToX(270);
-			transition.setInterpolator(Interpolator.EASE_BOTH);
-			transition.setOnFinished(new EventHandler<ActionEvent>() {
+			slideMenuTransition.setFromX(0);
+			slideMenuTransition.setToX(270);
+			slideMenuTransition.setInterpolator(Interpolator.EASE_BOTH);
+			slideMenuTransition.setOnFinished(new EventHandler<ActionEvent>() {
 
 				@Override
 				public void handle(ActionEvent event) {
@@ -180,19 +196,51 @@ public class MainScreen extends Screen {
 
 				}
 			});
-			transition.play();
+			slideMenuTransition.play();
 		} else {
-			transition.setFromX(270);
-			transition.setToX(0);
-			transition.setInterpolator(Interpolator.EASE_BOTH);
-			transition.play();
-			transition.setOnFinished(new EventHandler<ActionEvent>() {
+			slideMenuTransition.setFromX(270);
+			slideMenuTransition.setToX(0);
+			slideMenuTransition.setInterpolator(Interpolator.EASE_BOTH);
+			slideMenuTransition.play();
+			slideMenuTransition.setOnFinished(new EventHandler<ActionEvent>() {
 
 				@Override
 				public void handle(ActionEvent event) {
 					slideMenuOpened = false;
+					System.out.println(newProjectOpened);
 				}
 			});
 		}
 	}
+
+	private void newProjectTransition() {
+		newProjectTransition.setNode(newProjectWindowHolder);
+		if (!newProjectOpened) {
+			newProjectTransition.setFromY(0);
+			newProjectTransition.setToY(-530);
+			newProjectTransition.setInterpolator(Interpolator.EASE_BOTH);
+			newProjectTransition.setOnFinished(new EventHandler<ActionEvent>() {
+
+				@Override
+				public void handle(ActionEvent event) {
+					newProjectOpened = true;
+					System.out.println(newProjectOpened);
+				}
+			});
+			newProjectTransition.play();
+		} else {
+			newProjectTransition.setFromY(-530);
+			newProjectTransition.setToY(0);
+			newProjectTransition.setInterpolator(Interpolator.EASE_BOTH);
+			newProjectTransition.play();
+			newProjectTransition.setOnFinished(new EventHandler<ActionEvent>() {
+
+				@Override
+				public void handle(ActionEvent event) {
+					newProjectOpened = false;
+				}
+			});
+		}
+	}
+
 }

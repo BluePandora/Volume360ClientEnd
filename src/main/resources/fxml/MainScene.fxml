@@ -62,9 +62,9 @@
 		</Pane>
 		<Pane layoutX="1155.0" layoutY="60.0" prefHeight="660.0" prefWidth="125.0" stylesheets="@../styles/MainSceneStyle.css">
 			<children>
-            <Button layoutX="15.0" layoutY="526.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="74.0" styleClass="fab" />
+            <Button layoutX="15.0" layoutY="526.0" mnemonicParsing="false" onAction="#newProjectCreate" prefHeight="74.0" prefWidth="74.0" styleClass="fab" />
 			</children>
 		</Pane>
-      <AnchorPane layoutX="188.0" layoutY="243.0" style="-fx-background-radius: 5 5 0 0; -fx-background-color: argb(0,0,0,0);" />
+      <StackPane fx:id="newProjectWindowHolder" layoutX="680.0" layoutY="750.0" prefHeight="500.0" prefWidth="450.0" />
 	</children>
 </AnchorPane>
