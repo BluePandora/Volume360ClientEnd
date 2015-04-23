@@ -1,8 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
-</AnchorPane>
 
+<AnchorPane style="-fx-background-radius: 5 5 0 0; -fx-background-color: #FAFAFA;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <BorderPane prefHeight="500.0" prefWidth="450.0" style="-fx-background-radius: 5 5 0 0; -fx-background-color: #FAFAFA;">
+         <top>
+            <Pane prefHeight="30.0" prefWidth="450.0" style="-fx-background-color: #3A3A3A; -fx-background-radius: 5 5 0 0;" BorderPane.alignment="CENTER">
+               <children>
+                  <Text fill="#ebebeb" layoutX="14.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Project">
+                     <font>
+                        <Font name="Roboto Regular" size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+         </top>
+         <center>
+            <Pane BorderPane.alignment="CENTER">
+               <children>
+                  <TextField layoutX="14.0" layoutY="14.0" promptText="Project Name">
+                     <font>
+                        <Font name="Roboto Regular" size="18.0" />
+                     </font>
+                  </TextField>
+                  <DatePicker layoutX="14.0" layoutY="75.0" prefHeight="40.0" prefWidth="218.0" promptText="Project Completion date" />
+                  <TextField layoutX="14.0" layoutY="137.0" promptText="Work Order">
+                     <font>
+                        <Font name="Roboto Regular" size="18.0" />
+                     </font>
+                  </TextField>
+                  <TextField layoutX="16.0" layoutY="200.0" promptText="Amount">
+                     <font>
+                        <Font name="Roboto Regular" size="18.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </Pane>
+         </center>
+         <bottom>
+            <Pane prefHeight="50.0" prefWidth="450.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button layoutX="14.0" layoutY="5.0" mnemonicParsing="false" prefHeight="40.0" text="Button" />
+               </children>
+            </Pane>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>
