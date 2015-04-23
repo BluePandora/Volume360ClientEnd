@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane style="-fx-background-radius: 5 5 0 0; -fx-background-color: #FAFAFA;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<AnchorPane style="-fx-background-radius: 5 5 0 0; -fx-background-color: #FAFAFA;" stylesheets="@../styles/NewProjectStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <BorderPane prefHeight="500.0" prefWidth="450.0" style="-fx-background-radius: 5 5 0 0; -fx-background-color: #FAFAFA;">
          <top>
@@ -24,29 +23,38 @@
          <center>
             <Pane BorderPane.alignment="CENTER">
                <children>
-                  <TextField layoutX="14.0" layoutY="14.0" promptText="Project Name">
+                  <TextField layoutY="10.0" prefHeight="30.0" prefWidth="400.0" promptText="Project Name" style="-fx-prompt-text-fill: #7A7A7A; -fx-background-color: null;">
                      <font>
-                        <Font name="Roboto Regular" size="18.0" />
+                        <Font name="Roboto Bold" size="14.0" />
                      </font>
                   </TextField>
-                  <DatePicker layoutX="14.0" layoutY="75.0" prefHeight="40.0" prefWidth="218.0" promptText="Project Completion date" />
-                  <TextField layoutX="14.0" layoutY="137.0" promptText="Work Order">
+                  <DatePicker layoutX="218.0" layoutY="101.0" prefHeight="40.0" prefWidth="218.0" promptText="Project Completion date" />
+                  <TextField layoutY="52.0" promptText="Work Order" style="-fx-background-color: null; -fx-prompt-text-fill: #7A7A7A;">
                      <font>
-                        <Font name="Roboto Regular" size="18.0" />
+                        <Font name="Roboto2000980 Black" size="20.0" />
                      </font>
                   </TextField>
-                  <TextField layoutX="16.0" layoutY="200.0" promptText="Amount">
+                  <TextField layoutY="103.0" promptText="Amount" style="-fx-background-color: null; -fx-prompt-text-fill: #AAAAAA;">
                      <font>
-                        <Font name="Roboto Regular" size="18.0" />
+                        <Font name="Roboto Condensed Bold" size="18.0" />
                      </font>
                   </TextField>
+                  <Pane layoutY="40.0" prefHeight="1.0" prefWidth="450.0" style="-fx-background-color: #AAAAAA;" />
+                  <TextArea layoutX="10.0" layoutY="152.0" prefHeight="260.0" prefWidth="430.0" promptText="Project Details" style="-fx-prompt-text-fill: #8A8A8A; -fx-background-color: #FAFAFA; -fx-border-color: null; -fx-effect: null;">
+                     <font>
+                        <Font name="Roboto Regular" size="16.0" />
+                     </font>
+                  </TextArea>
                </children>
             </Pane>
          </center>
          <bottom>
             <Pane prefHeight="50.0" prefWidth="450.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button layoutX="14.0" layoutY="5.0" mnemonicParsing="false" prefHeight="40.0" text="Button" />
+                  <Button layoutX="14.0" layoutY="8.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="61.0" text="Save">
+                     <font>
+                        <Font name="Roboto Bold" size="14.0" />
+                     </font></Button>
                </children>
             </Pane>
          </bottom>

@@ -65,7 +65,9 @@ public class SlidingMenuListCell extends ListCell<SlidingMenuItem> {
 		if (!newValue) {
 			itemText.setStyle("-fx-text-fill: #123456;");
 		} else {
-			itemText.setStyle("-fx-text-fill: #F26D21;");
+			if (getItem().getTextColor() != null)
+				itemText.setStyle("-fx-text-fill: " + getItem().getTextColor()
+						+ ";");
 		}
 	}
 

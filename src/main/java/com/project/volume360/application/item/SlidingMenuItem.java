@@ -4,6 +4,7 @@ public class SlidingMenuItem {
 
 	private String icon;
 	private String title;
+	private String textColor;
 	private boolean divider;
 
 	/**
@@ -11,7 +12,8 @@ public class SlidingMenuItem {
 	 * @param title
 	 * @param divider
 	 */
-	public SlidingMenuItem(String icon, String title, boolean divider) {
+	public SlidingMenuItem(String icon, String title, String textColor,
+			boolean divider) {
 		this.icon = icon;
 		this.title = title;
 		this.divider = divider;
@@ -62,6 +64,21 @@ public class SlidingMenuItem {
 		this.divider = divider;
 	}
 
+	/**
+	 * @return the textColor
+	 */
+	public String getTextColor() {
+		return textColor;
+	}
+
+	/**
+	 * @param textColor
+	 *            the textColor to set
+	 */
+	public void setTextColor(String textColor) {
+		this.textColor = textColor;
+	}
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -70,7 +87,7 @@ public class SlidingMenuItem {
 	@Override
 	public String toString() {
 		return "SlidingMenuItem [icon=" + icon + ", title=" + title
-				+ ", divider=" + divider + "]";
+				+ ", textColor=" + textColor + ", divider=" + divider + "]";
 	}
 
 }

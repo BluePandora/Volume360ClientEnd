@@ -3,36 +3,43 @@
 		{
 			"title":"Running",
 			"icon":"ic_ongoing_24dp.png",
-			"divider": false
+			"textColor":"#F26D21",
+			"divider": false			
 		},
 		{				
 			"title":"All",
 			"icon":null,
+			"textColor":null,
 			"divider": false
 		},
 		{
 			"title":"Done",
 			"icon": "ic_done_24dp.png",
+			"textColor":"#059D58",
 			"divider": true
 		},
 		{
 			"title":"Civil",
 			"icon": null,
+			"textColor":null,
 			"divider":false
 		},
 		{
 			"title":"Electrical",
 			"icon": null,
+			"textColor":null,
 			"divider": false
 		},
 		{
 			"title":"Networking",
 			"icon": null,
+			"textColor":null,
 			"divider": false
 		},
 		{
 			"title":"Fire and Safety",
 			"icon": null,
+			"textColor":null,
 			"divider": true
 		}
 	]
