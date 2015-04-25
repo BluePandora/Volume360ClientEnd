@@ -38,7 +38,7 @@ public class MainApp extends Application implements ApplicationListener {
 		launch(args);
 	}
 
-	@Override
+	@Override 
 	public void changeScene(int tag) {
 		switch (tag) {
 		case LOG_IN_SCENE:
