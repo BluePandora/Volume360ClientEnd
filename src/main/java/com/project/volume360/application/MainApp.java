@@ -39,7 +39,7 @@ public class MainApp extends Application implements ApplicationListener {
 	}
 
 	@Override 
-	public void changeScene(int tag) {
+	public void changeScene(int tag) { 
 		switch (tag) {
 		case LOG_IN_SCENE:
 			LogInScreen logInScreen = (LogInScreen) screenFactory.getScreen(
