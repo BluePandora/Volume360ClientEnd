@@ -29,10 +29,10 @@ public class MainApp extends Application implements ApplicationListener {
 	/**
 	 * The main() method is ignored in correctly deployed JavaFX application.
 	 * main() serves only as fallback in case the application can not be
-	 * launched through deployment artifacts.
+	 * launched through deployment artifacts .
 	 *
 	 * @param args 
-	 *            the command line arguments
+	 *            the command line arguments 
 	 */
 	public static void main(String[] args) {
 		launch(args);
@@ -40,7 +40,7 @@ public class MainApp extends Application implements ApplicationListener {
 
 	@Override 
 	public void changeScene(int tag) { 
-		switch (tag) {
+		switch (tag) {		
 		case LOG_IN_SCENE:
 			LogInScreen logInScreen = (LogInScreen) screenFactory.getScreen(
 					primaryStage, LogInScreen.class);
