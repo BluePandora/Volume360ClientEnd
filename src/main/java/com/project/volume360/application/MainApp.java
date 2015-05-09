@@ -1,5 +1,7 @@
 package com.project.volume360.application;
 
+import java.util.zip.ZipFile;
+
 import com.project.volume360.application.item.Admin;
 import com.project.volume360.screen.LogInScreen;
 import com.project.volume360.screen.MainScreen;
@@ -19,21 +21,14 @@ public class MainApp extends Application implements ApplicationListener {
 		screenFactory = new ScreenFactory();
 		primaryStage.setTitle("Volume360");
 		primaryStage.setWidth(1286);
-		primaryStage.setHeight(745);
+		primaryStage.setHeight(745);		
 		primaryStage.setResizable(false);
 		this.primaryStage = primaryStage;
 		changeScene(LOG_IN_SCENE);
 		primaryStage.show();
 	}
 
-	/**
-	 * The main() method is ignored in correctly deployed JavaFX application.
-	 * main() serves only as fallback in case the application can not be
-	 * launched through deployment artifacts .
-	 *
-	 * @param args 
-	 *            the command line arguments 
-	 */
+	
 	public static void main(String[] args) {
 		launch(args);
 	}
