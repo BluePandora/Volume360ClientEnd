@@ -74,7 +74,13 @@ public class SlidingMenuListCell extends ListCell<SlidingMenuItem> {
 	@Override
 	public void updateItem(SlidingMenuItem item, boolean empty) {
 		super.updateItem(item, empty);
-		if (item != null) {
+		if (empty || item == null) {
+			setBorder(null);
+			setText(null);
+			setPrefHeight(0);
+			setGraphic(null);
+		} else {
+			setPrefHeight(rootPane.getPrefHeight());
 			System.out.println(getHeight());
 			itemText.setText(item.getTitle());
 			setGraphic(rootPane);
@@ -92,5 +98,3 @@ public class SlidingMenuListCell extends ListCell<SlidingMenuItem> {
 		}
 	}
 }
-
-// com.project.volume360.application.control.SlidingMenuListCell
