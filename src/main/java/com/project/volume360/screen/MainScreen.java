@@ -3,6 +3,7 @@ package com.project.volume360.screen;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 
 import javafx.animation.Interpolator;
 import javafx.animation.TranslateTransition;
@@ -27,8 +28,9 @@ import javafx.util.Duration;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.project.volume360.application.control.ProjectListItemCell;
 import com.project.volume360.application.control.SlidingMenuListCell;
-import com.project.volume360.application.item.NewProject;
+import com.project.volume360.application.item.ProjectListItem;
 import com.project.volume360.application.item.SlideMenu;
 import com.project.volume360.application.item.SlidingMenuItem;
 import com.project.volume360.screen.annotation.FXMLLocation;
@@ -50,6 +52,13 @@ public class MainScreen extends Screen {
 
 	@FXML
 	private ListView<SlidingMenuItem> slidingMenu;
+	ObservableList<SlidingMenuItem> menuItem = FXCollections
+			.observableArrayList();
+
+	@FXML
+	private ListView<ProjectListItem> projectMenu;
+	ObservableList<ProjectListItem> projectItem = FXCollections
+			.observableArrayList();
 
 	@FXML
 	private Pane actionBar;
@@ -67,24 +76,66 @@ public class MainScreen extends Screen {
 	TranslateTransition newProjectTransition = new TranslateTransition(
 			new Duration(500));
 
-	ObservableList<String> data = FXCollections.observableArrayList(
-			"chocolate", "salmon", "chocolate", "salmon", "Fire & Safety",
-			"salmon", "chocolate", "salmon", "chocolate", "salmon",
-			"chocolate", "salmon");
-
-	ObservableList<SlidingMenuItem> menuItem = FXCollections
-			.observableArrayList();
-
 	public MainScreen() {
 	}
 
 	@FXML
 	public void initialize() {
 
-		final Circle clip = new Circle();
-		clip.setRadius(imageView.getLayoutBounds().getWidth() / 2);
-		clip.setTranslateX(imageView.getLayoutBounds().getWidth() / 2);
-		clip.setTranslateY(imageView.getLayoutBounds().getWidth() / 2);
+		createAvatar();
+		createSlidingMenuList();
+		createMenuListItem();
+		newProjectWindowView();
+		searchField.focusedProperty().addListener(
+				(observer, oldValue, newValue) -> searchFieldObserver(observer,
+						oldValue, newValue));
+	}
+
+	private void createMenuListItem() {
+		projectItem.add(new ProjectListItem());
+		projectItem.add(new ProjectListItem());
+		projectItem.add(new ProjectListItem());
+		projectItem.add(new ProjectListItem());
+		projectItem.add(new ProjectListItem());
+		projectItem.add(new ProjectListItem());
+		projectMenu.setItems(projectItem);
+		projectMenu
+				.setCellFactory(new Callback<ListView<ProjectListItem>, ListCell<ProjectListItem>>() {
+
+					@Override
+					public ListCell<ProjectListItem> call(
+							ListView<ProjectListItem> param) {
+						return ProjectListItemCell.getProjectListCell();
+					}
+				});
+	}
+
+	private void newProjectWindowView() {
+		ScreenFactory screenFactory = new ScreenFactory();
+		NewProjectWindow newProjectWindow = (NewProjectWindow) screenFactory
+				.getScreen(getPrimaryStage(), NewProjectWindow.class);
+		newProjectWindowHolder.getChildren()
+				.add(newProjectWindow.getRootPane());
+	}
+
+	private void createSlidingMenuList() {
+		InputStream inputStream = getClass().getResourceAsStream(
+				"/raw/slidingmenuitems.json");
+		byte[] b = new byte[1024];
+		try {
+			inputStream.read(b);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		Gson gson = new GsonBuilder().create();
+		String jsonString = null;
+		try {
+			jsonString = new String(b, "UTF-8").trim();
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+		SlideMenu slideMenu = gson.fromJson(jsonString, SlideMenu.class);
+		menuItem.addAll(slideMenu.getSlidingMenuItems());
 		slidingMenu.setItems(menuItem);
 		slidingMenu.getSelectionModel().selectFirst();
 		slidingMenu
@@ -95,30 +146,15 @@ public class MainScreen extends Screen {
 						return SlidingMenuListCell.getSlidingMenuListCell();
 					}
 				});
-		slidingMenu.setPrefHeight(66.8 * data.size());
-		InputStream inputStream = getClass().getResourceAsStream(
-				"/raw/slidingmenuitems.json");
-		byte[] b = new byte[1024];
-		try {
-			inputStream.read(b);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		ScreenFactory screenFactory = new ScreenFactory();
-		NewProjectWindow newProjectWindow = (NewProjectWindow) screenFactory
-				.getScreen(getPrimaryStage(), NewProjectWindow.class);
-		newProjectWindowHolder.getChildren()
-				.add(newProjectWindow.getRootPane());
-		Gson gson = new GsonBuilder().create();
-		String string2 = new String(b).trim();
-		SlideMenu slideMenu = gson.fromJson(string2, SlideMenu.class);
-		menuItem.addAll(slideMenu.getSlidingMenuItems());
-		System.out.println(gson.toJson(slideMenu));
+
+	}
+
+	private void createAvatar() {
+		final Circle clip = new Circle();
+		clip.setRadius(imageView.getLayoutBounds().getWidth() / 2);
+		clip.setTranslateX(imageView.getLayoutBounds().getWidth() / 2);
+		clip.setTranslateY(imageView.getLayoutBounds().getWidth() / 2);
 		imageView.setClip(clip);
-		searchField.focusedProperty().addListener(
-				(observer, oldValue, newValue) -> searchFieldObserver(observer,
-						oldValue, newValue));
 	}
 
 	private Object searchFieldObserver(
