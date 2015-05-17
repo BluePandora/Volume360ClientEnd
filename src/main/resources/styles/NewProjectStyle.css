@@ -1,15 +1,50 @@
-.button {
+.save-button {
 	-fx-background-color: #F26D21;
 	-fx-text-fill: #ffffff;
 	-fx-background-radius: 2.0;
 }
 
-.button:hover {
+.save-button:hover {
 	-fx-background-color: #F26D21;
-	-fx-effect: dropshadow(three-pass-box, rgba(0.0, 0.0, 0.0, 0.6), 10.0, 0.0, 0.0, 3.0);
+	-fx-effect: dropshadow(three-pass-box, rgba(0.0, 0.0, 0.0, 0.6), 10.0,
+		0.0, 0.0, 3.0);
 }
 
-.button:pressed, .button:default:hover:pressed {
+.save-button:pressed, .save-button:default:hover:pressed {
 	-fx-background-color: #F26D21;
-	-fx-effect: dropshadow(three-pass-box, rgba(0.0, 0.0, 0.0, 0.3), 10.0, 0.0, 0.0, 3.0);
+	-fx-effect: dropshadow(three-pass-box, rgba(0.0, 0.0, 0.0, 0.3), 10.0,
+		0.0, 0.0, 3.0);
+}
+
+.browse-button {
+	-fx-background-color: #F26D21;
+	-fx-text-fill: #ffffff;
+	-fx-background-radius: 0.0 2.0 2.0 0.0;
+}
+
+.browse-button:hover {
+	-fx-background-color: #d9590d;
+	-fx-effect: null;
+}
+
+.browse-button:pressed, .browse-button:default:hover:pressed {
+	-fx-background-color: #ae480b;
+	-fx-effect: null;
+}
+
+.cross-button {
+	-fx-background-color: null;
+	-fx-text-fill: #ffffff;
+	-fx-background-image: url("images/cross.png");
+	-fx-background-radius: 0.0 2.0 2.0 0.0;
+}
+
+.cross-button:hover {
+	-fx-background-color: null;
+	-fx-effect: null;
+}
+
+.cross-button:pressed, .cross-button:default:hover:pressed {
+	-fx-background-color: null;
+	-fx-effect: null;
 }

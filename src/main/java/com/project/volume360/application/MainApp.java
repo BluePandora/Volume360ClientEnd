@@ -1,13 +1,12 @@
 package com.project.volume360.application;
 
-import java.util.zip.ZipFile;
-
 import com.project.volume360.application.item.Admin;
 import com.project.volume360.screen.LogInScreen;
 import com.project.volume360.screen.MainScreen;
 import com.project.volume360.screen.factory.ScreenFactory;
 
 import javafx.application.Application;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class MainApp extends Application implements ApplicationListener {
@@ -21,21 +20,20 @@ public class MainApp extends Application implements ApplicationListener {
 		screenFactory = new ScreenFactory();
 		primaryStage.setTitle("Volume360");
 		primaryStage.setWidth(1286);
-		primaryStage.setHeight(745);		
+		primaryStage.setHeight(745);
 		primaryStage.setResizable(false);
 		this.primaryStage = primaryStage;
 		changeScene(LOG_IN_SCENE);
 		primaryStage.show();
 	}
 
-	
 	public static void main(String[] args) {
 		launch(args);
 	}
 
-	@Override 
-	public void changeScene(int tag) { 
-		switch (tag) {		
+	@Override
+	public void changeScene(int tag) {
+		switch (tag) {
 		case LOG_IN_SCENE:
 			LogInScreen logInScreen = (LogInScreen) screenFactory.getScreen(
 					primaryStage, LogInScreen.class);
