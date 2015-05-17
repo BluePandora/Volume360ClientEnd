@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="rootPane" prefHeight="100.0" prefWidth="860.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.volume360.application.control.ProjectListItemCell">
+   <children>
+      <ImageView fx:id="creatorAvatar" fitHeight="50.0" fitWidth="50.0" layoutX="13.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../styles/images/9397052.jpg" />
+         </image>
+      </ImageView>
+      <Text fill="#005eff" layoutX="76.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Location:">
+         <font>
+            <Font name="Roboto2000980 Black" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="#002b47" layoutX="663.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="22-01-2015 12:00:00" wrappingWidth="175.13671875">
+         <font>
+            <Font name="Roboto Condensed Light" size="18.0" />
+         </font>
+      </Text>
+      <Text fill="#00791a" layoutX="74.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Created By:">
+         <font>
+            <Font name="Roboto2000980 Bold" size="18.0" />
+         </font>
+      </Text>
+      <Label layoutX="168.0" layoutY="39.0" prefHeight="30.0" prefWidth="670.0" text="Project" textFill="#002d7a">
+         <font>
+            <Font name="Roboto2000980 Medium" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="175.0" layoutY="70.0" prefHeight="30.0" prefWidth="282.0" text="Full Name" textFill="#002d7a">
+         <font>
+            <Font name="Roboto2000980 Medium" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="577.0" layoutY="68.0" prefHeight="30.0" prefWidth="270.0" text="Type" textFill="#002d7a">
+         <font>
+            <Font name="Roboto2000980 Medium" size="18.0" />
+         </font>
+      </Label>
+      <Text fill="#787800" layoutX="462.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Project Type:">
+         <font>
+            <Font name="Roboto2000980 Bold" size="18.0" />
+         </font>
+      </Text>
+      <Label layoutX="181.0" layoutY="9.0" prefHeight="30.0" prefWidth="425.0" text="Name" textFill="#002d7a">
+         <font>
+            <Font name="Roboto2000980 Medium" size="25.0" />
+         </font>
+      </Label>
+      <Text fill="#3400ae" layoutX="14.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Project Name:">
+         <font>
+            <Font name="Roboto2000980 Black" size="25.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
