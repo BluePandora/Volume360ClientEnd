@@ -14,22 +14,23 @@
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" styleClass="background" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.volume360.screen.MainScreen">
 	<children>
       <Pane prefHeight="720.0" prefWidth="1280.0" styleClass="background" stylesheets="@../styles/MainSceneStyle.css" />
-      <Pane fx:id="slidingMenuPane" layoutX="-270.0" layoutY="60.0" prefHeight="658.0" prefWidth="250.0" styleClass="slide-menu-background" stylesheets="@../styles/SlideMenuStyle.css">
-         <children>
-      		<ListView fx:id="slidingMenu" maxHeight="658.0" prefWidth="248.0" stylesheets="@../styles/SlideMenuStyle.css">
-      			<items>
-      				<FXCollections fx:factory="observableArrayList">
-      					<String fx:value="Book ID" />
-      					<String fx:value="Book Name" />
-      
-      				</FXCollections>
-      			</items>
-      		</ListView>
-         </children>
-      </Pane>
-		<ListView layoutX="250.0" layoutY="80.0" prefHeight="380.0" prefWidth="910.0" stylesheets="@../styles/MainSceneStyle.css">
+		<ListView fx:id="projectMenu" layoutY="62.0" prefHeight="655.0" prefWidth="1280.0" stylesheets="@../styles/MainSceneStyle.css">
 			<items>
 				<FXCollections fx:factory="observableArrayList">
+					<String fx:value="Project 1" />
+					<String fx:value="Project 2" />
+					<String fx:value="Project 3" />
+					<String fx:value="Project 4" />
+					<String fx:value="Project 5" />
+					<String fx:value="Project 6" />
+					<String fx:value="Project 7" />
+					<String fx:value="Project 1" />
+					<String fx:value="Project 2" />
+					<String fx:value="Project 3" />
+					<String fx:value="Project 4" />
+					<String fx:value="Project 5" />
+					<String fx:value="Project 6" />
+					<String fx:value="Project 7" />
 					<String fx:value="Project 1" />
 					<String fx:value="Project 2" />
 					<String fx:value="Project 3" />
@@ -40,6 +41,19 @@
 				</FXCollections>
 			</items>
 		</ListView>
+      <Pane fx:id="slidingMenuPane" layoutX="-270.0" layoutY="60.0" prefHeight="658.0" prefWidth="250.0" styleClass="slide-menu-background" stylesheets="@../styles/SlideMenuStyle.css">
+         <children>
+      		<ListView fx:id="slidingMenu" maxHeight="658.0" prefHeight="658.0" prefWidth="248.0">
+      			<items>
+      				<FXCollections fx:factory="observableArrayList">
+      					<String fx:value="Book ID" />
+      					<String fx:value="Book Name" />
+      
+      				</FXCollections>
+      			</items>
+      		</ListView>
+         </children>
+      </Pane>
 		<Pane fx:id="actionBar" prefHeight="60.0" prefWidth="1280.0" styleClass="action-bar" stylesheets="@../styles/MainSceneStyle.css">
 			<children>
 				<ImageView fx:id="imageView" fitHeight="50.0" fitWidth="50.0" layoutX="1197.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
@@ -60,10 +74,10 @@
             <Button fx:id="menuButton" layoutX="14.0" layoutY="6.0" mnemonicParsing="false" onAction="#onMenuPressed" prefHeight="48.0" prefWidth="48.0" styleClass="menu-button" />
 			</children>
 		</Pane>
-		<Pane layoutX="1155.0" layoutY="60.0" prefHeight="660.0" prefWidth="125.0" stylesheets="@../styles/MainSceneStyle.css">
-			<children>
-            <Button layoutX="15.0" layoutY="526.0" mnemonicParsing="false" onAction="#newProjectCreate" prefHeight="74.0" prefWidth="74.0" styleClass="fab" />
-			</children>
+		<Pane layoutX="1153.0" layoutY="588.0" stylesheets="@../styles/MainSceneStyle.css">
+         <children>
+            <Button mnemonicParsing="false" onAction="#newProjectCreate" prefHeight="74.0" prefWidth="74.0" styleClass="fab" />
+         </children>
 		</Pane>
       <StackPane fx:id="newProjectWindowHolder" layoutX="680.0" layoutY="750.0" prefHeight="500.0" prefWidth="450.0" />
 	</children>
