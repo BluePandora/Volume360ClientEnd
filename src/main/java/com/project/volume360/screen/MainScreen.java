@@ -30,6 +30,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.project.volume360.application.control.ProjectListItemCell;
 import com.project.volume360.application.control.SlidingMenuListCell;
+import com.project.volume360.application.control.ProjectListItemCell.ProjectMenuListener;
 import com.project.volume360.application.item.ProjectListItem;
 import com.project.volume360.application.item.SlideMenu;
 import com.project.volume360.application.item.SlidingMenuItem;
@@ -37,7 +38,7 @@ import com.project.volume360.screen.annotation.FXMLLocation;
 import com.project.volume360.screen.factory.ScreenFactory;
 
 @FXMLLocation(location = "/fxml/MainScene.fxml")
-public class MainScreen extends Screen {
+public class MainScreen extends Screen implements ProjectMenuListener {
 
 	@FXML
 	private ImageView imageView;
@@ -105,7 +106,8 @@ public class MainScreen extends Screen {
 					@Override
 					public ListCell<ProjectListItem> call(
 							ListView<ProjectListItem> param) {
-						return ProjectListItemCell.getProjectListCell();
+						return ProjectListItemCell
+								.getProjectListCell(MainScreen.this);
 					}
 				});
 	}
@@ -279,4 +281,9 @@ public class MainScreen extends Screen {
 		}
 	}
 
+	@Override
+	public void onProjectSelect(ProjectListItem projectListItem, int position) {
+		System.out.println(position);
+
+	}
 }

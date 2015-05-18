@@ -1,0 +1,19 @@
+.background {
+	-fx-background-color: #ffffff;
+	-fx-background-radius: 2.0;
+	-fx-text-fill: #123456;
+	-fx-effect: dropshadow(three-pass-box, rgba(0.0, 0.0, 0.0, 0.3), 2.5,
+		0.0, 1.0, 2.0);
+}
+
+.background:hover {
+	-fx-background-color: #FCFCFC;
+	-fx-effect: dropshadow(three-pass-box, rgba(0.0, 0.0, 0.0, 0.3), 5.0,
+		0.0, 1.0, 2.0);
+}
+
+.background:pressed, .background:default:hover:pressed {
+	-fx-background-color: #FCFCFC;
+	-fx-effect: dropshadow(three-pass-box, rgba(0.0, 0.0, 0.0, 0.3), 1.0,
+		0.0, 1.0, 2.0);
+}

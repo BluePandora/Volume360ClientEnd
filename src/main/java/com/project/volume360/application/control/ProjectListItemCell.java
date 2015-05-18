@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ListCell;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
 
@@ -21,11 +22,14 @@ public class ProjectListItemCell extends ListCell<ProjectListItem> {
 	@FXML
 	private ImageView creatorAvatar;
 
+	private ProjectMenuListener projectMenuListener;
+
 	public ProjectListItemCell() {
 
 	}
 
-	public static ProjectListItemCell getProjectListCell() {
+	public static ProjectListItemCell getProjectListCell(
+			ProjectMenuListener projectMenuListener) {
 		FXMLLoader fxmlLoader = new FXMLLoader();
 		FXMLLocation fxmlLocation = ProjectListItemCell.class
 				.getAnnotation(FXMLLocation.class);
@@ -38,7 +42,13 @@ public class ProjectListItemCell extends ListCell<ProjectListItem> {
 		}
 		ProjectListItemCell projectListItemCell = (ProjectListItemCell) fxmlLoader
 				.getController();
+		projectListItemCell.setProjectMenuListener(projectMenuListener);
 		return projectListItemCell;
+	}
+
+	@FXML
+	private void onProjectSelected(MouseEvent mouseEvent) {
+		projectMenuListener.onProjectSelect(getItem(), getIndex());
 	}
 
 	@Override
@@ -58,4 +68,18 @@ public class ProjectListItemCell extends ListCell<ProjectListItem> {
 		clip.setTranslateY(creatorAvatar.getLayoutBounds().getWidth() / 2);
 		creatorAvatar.setClip(clip);
 	}
+
+	public ProjectMenuListener getProjectMenuListener() {
+		return projectMenuListener;
+	}
+
+	public void setProjectMenuListener(ProjectMenuListener projectMenuListener) {
+		this.projectMenuListener = projectMenuListener;
+	}
+
+	public interface ProjectMenuListener {
+		public void onProjectSelect(ProjectListItem projectListItem,
+				int position);
+	}
+
 }

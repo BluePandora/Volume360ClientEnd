@@ -49,26 +49,9 @@
 }
 
 .list-cell {
-	-fx-background-color: #ffffff;
 	-fx-padding: 20.0 130.0 20.0 275.0;
-	-fx-background-insets: 10.0 175.0 2.0 275.0;
-	-fx-background-radius: 2.0;
-	-fx-text-fill: #123456;
-	-fx-font-size: 13.0pt;
+	-fx-background-insets: 20.0 130.0 20.0 275.0;
 	-fx-font-family: "Museo Sans Rounded 700";
-	-fx-effect: dropshadow(three-pass-box, rgba(0.0, 0.0, 0.0, 0.3), 5.0,
-		0.0, 1.0, 2.0);
-}
-
-.list-cell:odd {
-	-fx-background-color: #ffffff;
-	-fx-padding: 20.0 130.0 20.0 275.0;
-	-fx-background-insets: 10.0 175.0 2.0 275.0;
-	-fx-background-radius: 2.0;
-	-fx-font-size: 13.0pt;
-	-fx-font-family: "Museo Sans Rounded 700";
-	-fx-effect: dropshadow(three-pass-box, rgba(0.0, 0.0, 0.0, 0.3), 5.0,
-		0.0, 1.0, 2.0);
 }
 
 .slide-menu-front {
@@ -162,4 +145,27 @@
 .menu-button-second:pressed, .menu-button-second:default:hover:pressed {
 	-fx-background-color: rgba(0.0, 0.0, 0.0, 0.2);
 	-fx-opacity: 1.0;
+}
+
+.scroll-bar>.thumb {
+	-fx-background-color: #5A5A5A;
+	/*-fx-background-insets: 1, 2, 3;*/
+	-fx-background-insets: 2, 3, 4;
+	/*-fx-background-radius: 0.416667em, 0.333333em, 0.25em; */
+	/* 5, 4,3 */
+	-fx-background-radius: 2;
+}
+
+.scroll-bar>.increment-button, .scroll-bar>.decrement-button {
+	-fx-background-color: #FFFFFF;
+}
+
+.scroll-bar>.increment-button:hover, .scroll-bar>.decrement-button:hover
+	{
+	-fx-background-color: #d2d2d2;
+}
+
+.scroll-bar>.increment-button:pressed, .scroll-bar>.decrement-button:pressed
+	{
+	-fx-background-color: #5A5A5A;
 }
