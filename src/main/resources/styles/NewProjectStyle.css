@@ -35,16 +35,18 @@
 .cross-button {
 	-fx-background-color: null;
 	-fx-text-fill: #ffffff;
-	-fx-background-image: url("images/cross.png");
-	-fx-background-radius: 0.0 2.0 2.0 0.0;
+	-fx-padding: 0 0 0 0;
+	-fx-background-radius: null;
 }
 
 .cross-button:hover {
 	-fx-background-color: null;
+	-fx-text-fill: #ECECEC;
 	-fx-effect: null;
 }
 
 .cross-button:pressed, .cross-button:default:hover:pressed {
 	-fx-background-color: null;
+	-fx-text-fill: #D0D0D0;
 	-fx-effect: null;
 }

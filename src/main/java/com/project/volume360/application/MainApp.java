@@ -6,7 +6,6 @@ import com.project.volume360.screen.MainScreen;
 import com.project.volume360.screen.factory.ScreenFactory;
 
 import javafx.application.Application;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class MainApp extends Application implements ApplicationListener {

@@ -76,7 +76,7 @@
 		</Pane>
 		<Pane layoutX="1153.0" layoutY="588.0" stylesheets="@../styles/MainSceneStyle.css">
          <children>
-            <Button mnemonicParsing="false" onAction="#newProjectCreate" prefHeight="74.0" prefWidth="74.0" styleClass="fab" />
+            <Button fx:id="newProjectButton" mnemonicParsing="false" onAction="#newProjectCreate" prefHeight="74.0" prefWidth="74.0" styleClass="fab" />
          </children>
 		</Pane>
       <StackPane fx:id="newProjectWindowHolder" layoutX="680.0" layoutY="750.0" prefHeight="500.0" prefWidth="450.0" />

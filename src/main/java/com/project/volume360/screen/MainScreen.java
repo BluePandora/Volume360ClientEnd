@@ -20,6 +20,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Circle;
@@ -48,6 +50,8 @@ public class MainScreen extends Screen implements ProjectMenuListener {
 	@FXML
 	private Button menuButton;
 
+	@FXML
+	private Button newProjectButton;
 	@FXML
 	private TextField searchField;
 
@@ -254,6 +258,8 @@ public class MainScreen extends Screen implements ProjectMenuListener {
 	private void newProjectTransition() {
 		newProjectTransition.setNode(newProjectWindowHolder);
 		if (!newProjectOpened) {
+			File file = new File(System.getProperty("user.dir")
+					+ "/src/main/resources/styles/images/ic_arrow_back_black_18dp.png");
 			newProjectTransition.setFromY(0);
 			newProjectTransition.setToY(-530);
 			newProjectTransition.setInterpolator(Interpolator.EASE_BOTH);

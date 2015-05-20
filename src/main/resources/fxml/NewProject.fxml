@@ -17,7 +17,7 @@
                         <Font name="Roboto Regular" size="18.0" />
                      </font>
                   </Text>
-                  <Button layoutX="400.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" styleClass="cross-button">
+                  <Button cancelButton="true" layoutX="418.0" layoutY="2.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="18.0" styleClass="cross-button" text="X" textFill="WHITE">
                      <tooltip>
                         <Tooltip text="Exit" wrapText="true">
                            <font>
@@ -26,8 +26,20 @@
                         </Tooltip>
                      </tooltip>
                      <font>
-                        <Font size="18.0" />
+                        <Font name="Roboto Bold" size="20.0" />
                      </font></Button>
+                  <Button cancelButton="true" layoutX="400.0" layoutY="1.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="18.0" styleClass="cross-button" text="_">
+                     <font>
+                        <Font name="Roboto Bold" size="20.0" />
+                     </font>
+                     <tooltip>
+                        <Tooltip text="Exit" wrapText="true">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                  </Button>
                </children>
             </Pane>
          </top>
