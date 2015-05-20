@@ -2,6 +2,7 @@ package com.project.volume360.application.control;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 
 import com.project.volume360.application.item.SlidingMenuItem;
 import com.project.volume360.screen.annotation.FXMLLocation;
@@ -85,9 +86,9 @@ public class SlidingMenuListCell extends ListCell<SlidingMenuItem> {
 			itemText.setText(item.getTitle());
 			setGraphic(rootPane);
 			if (item.getIcon() != null) {
-				File file = new File(System.getProperty("user.dir")
-						+ "/src/main/resources/images/" + item.getIcon());
-				Image image = new Image(file.toURI().toString());
+				InputStream inputStream = SlidingMenuItem.class
+						.getResourceAsStream("/images/" + item.getIcon());
+				Image image = new Image(inputStream);
 				slidingListIcon.setImage(image);
 			}
 			if (item.hasDivider()) {

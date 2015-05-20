@@ -168,9 +168,9 @@ public class MainScreen extends Screen implements ProjectMenuListener {
 			Boolean newValue) {
 		searchPaneOpened = newValue;
 		if (newValue) {
-			File file = new File(System.getProperty("user.dir")
-					+ "/src/main/resources/images/ic_search_black_18dp.png");
-			Image image = new Image(file.toURI().toString());
+			InputStream inputStream = MainScreen.class
+					.getResourceAsStream("/images/ic_arrow_back_black_18dp.png");
+			Image image = new Image(inputStream);
 			searchImage.setImage(image);
 			actionBar.setStyle("-fx-background-color: #BCBCBC;");
 			menuButton.getStyleClass().add("menu-button-second");
@@ -178,9 +178,9 @@ public class MainScreen extends Screen implements ProjectMenuListener {
 			if (slideMenuOpened)
 				slidingMenuTransition();
 		} else {
-			File file = new File(System.getProperty("user.dir")
-					+ "/src/main/resources/images/ic_search_white_18dp.png");
-			Image image = new Image(file.toURI().toString());
+			InputStream inputStream = MainScreen.class
+					.getResourceAsStream("/images/ic_search_white_18dp.png");
+			Image image = new Image(inputStream);
 			searchImage.setImage(image);
 			menuButton.getStyleClass().add("menu-button");
 			menuButton.getStyleClass().remove(1);
@@ -258,8 +258,6 @@ public class MainScreen extends Screen implements ProjectMenuListener {
 	private void newProjectTransition() {
 		newProjectTransition.setNode(newProjectWindowHolder);
 		if (!newProjectOpened) {
-			File file = new File(System.getProperty("user.dir")
-					+ "/src/main/resources/styles/images/ic_arrow_back_black_18dp.png");
 			newProjectTransition.setFromY(0);
 			newProjectTransition.setToY(-530);
 			newProjectTransition.setInterpolator(Interpolator.EASE_BOTH);
