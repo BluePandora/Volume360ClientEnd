@@ -1,8 +1,167 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
-</AnchorPane>
 
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ScrollPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #FFFFFF;">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Pane prefWidth="798.0">
+                     <children>
+                        <Label layoutX="15.0" layoutY="15.0" text="Project Details" textFill="#0257b2">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Separator layoutY="50.0" prefWidth="798.0" />
+                        <MenuButton layoutX="685.0" layoutY="14.0" mnemonicParsing="false" text="MenuButton">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Action 1" />
+                            <MenuItem mnemonicParsing="false" text="Action 2" />
+                          </items>
+                        </MenuButton>
+                     </children>
+                  </Pane>
+                  <Pane layoutY="330.0" prefWidth="798.0">
+                     <children>
+                        <Label layoutX="15.0" layoutY="15.0" text="Project Type:" textFill="#00724f">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <TextField disable="true" layoutX="130.0" layoutY="10.0" text="123456">
+                           <font>
+                              <Font name="Roboto Bold" size="18.0" />
+                           </font>
+                        </TextField>
+                        <TextField disable="true" layoutX="130.0" layoutY="55.0" prefHeight="35.0" prefWidth="100.0" text="123456">
+                           <font>
+                              <Font name="Roboto Bold" size="18.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="15.0" layoutY="60.0" text="Total Worker:" textFill="#00724f">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Separator layoutY="140.0" prefWidth="798.0" />
+                        <Label layoutX="15.0" layoutY="105.0" text="Daily Expend on the Worker:" textFill="#00724f">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <TextField disable="true" layoutX="245.0" layoutY="100.0" prefHeight="35.0" prefWidth="125.0" text="123456">
+                           <font>
+                              <Font name="Roboto Bold" size="18.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </Pane>
+                  <Pane layoutY="53.0" prefWidth="798.0">
+                     <children>
+                        <Label layoutX="15.0" layoutY="15.0" text="Project Code:" textFill="#00724f">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <TextField disable="true" layoutX="130.0" layoutY="10.0" text="123456">
+                           <font>
+                              <Font name="Roboto Bold" size="18.0" />
+                           </font>
+                        </TextField>
+                        <TextField disable="true" layoutX="130.0" layoutY="55.0" prefHeight="35.0" prefWidth="400.0" text="123456">
+                           <font>
+                              <Font name="Roboto Bold" size="18.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="15.0" layoutY="60.0" text="Project Name:" textFill="#00724f">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="15.0" layoutY="150.0" text="Project Taken at:" textFill="#00724f">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <DatePicker disable="true" layoutX="156.0" layoutY="145.0" prefHeight="34.0" prefWidth="174.0" promptText="12/12/12" />
+                        <DatePicker disable="true" layoutX="590.0" layoutY="145.0" prefHeight="34.0" prefWidth="174.0" promptText="12/12/12" />
+                        <Label layoutX="340.0" layoutY="150.0" text="Estimated Completation Date:" textFill="#00724f">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <TextField disable="true" layoutX="170.0" layoutY="190.0" text="12 days">
+                           <font>
+                              <Font name="Roboto Bold" size="18.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="15.0" layoutY="195.0" text="Time left to finish:" textFill="#00724f">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="15.0" layoutY="105.0" text="Project Location:" textFill="#00724f">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <TextField disable="true" layoutX="155.0" layoutY="100.0" prefHeight="35.0" prefWidth="400.0" text="123456">
+                           <font>
+                              <Font name="Roboto Bold" size="18.0" />
+                           </font>
+                        </TextField>
+                        <TextField disable="true" layoutX="455.0" layoutY="10.0" text="123456">
+                           <font>
+                              <Font name="Roboto Bold" size="18.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="355.0" layoutY="15.0" text="Created By:" textFill="#00724f">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="15.0" layoutY="240.0" text="Project Estimated Budget:" textFill="#00724f">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <TextField disable="true" layoutX="230.0" layoutY="235.0" text="12 days">
+                           <font>
+                              <Font name="Roboto Bold" size="18.0" />
+                           </font>
+                        </TextField>
+                        <Separator layoutY="275.0" prefWidth="798.0" />
+                     </children>
+                  </Pane>
+                  <Pane layoutY="475.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="15.0" layoutY="5.0" text="Project Details:" textFill="#00724f">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </Pane>
+                  <Text fill="#004586" layoutX="141.0" layoutY="500.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sample details" wrappingWidth="650.654296875">
+                     <font>
+                        <Font name="Roboto2000980 Light" size="20.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

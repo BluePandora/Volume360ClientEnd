@@ -13,7 +13,7 @@
 
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" styleClass="background" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.volume360.screen.MainScreen">
 	<children>
-      <Pane prefHeight="720.0" prefWidth="1280.0" styleClass="background" stylesheets="@../styles/MainSceneStyle.css" />
+  <Pane prefHeight="720.0" prefWidth="1280.0" styleClass="background" stylesheets="@../styles/MainSceneStyle.css" />
 		<ListView fx:id="projectMenu" layoutY="62.0" prefHeight="655.0" prefWidth="1280.0" stylesheets="@../styles/MainSceneStyle.css">
 			<items>
 				<FXCollections fx:factory="observableArrayList">
@@ -79,6 +79,7 @@
             <Button fx:id="newProjectButton" mnemonicParsing="false" onAction="#newProjectCreate" prefHeight="74.0" prefWidth="74.0" styleClass="fab" />
          </children>
 		</Pane>
+      <StackPane layoutX="290.0" layoutY="89.0" prefHeight="600.0" prefWidth="820.0" style="-fx-background-color: #FAFAFA;" visible="false" />
       <StackPane fx:id="newProjectWindowHolder" layoutX="680.0" layoutY="750.0" prefHeight="500.0" prefWidth="450.0" />
 	</children>
 </AnchorPane>
