@@ -6,7 +6,6 @@ import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 
 import javafx.animation.Interpolator;
-import javafx.animation.ScaleTransition;
 import javafx.animation.TranslateTransition;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -38,6 +37,7 @@ import com.project.volume360.application.item.SlidingMenuItem;
 import com.project.volume360.screen.annotation.FXMLLocation;
 import com.project.volume360.screen.factory.ScreenFactory;
 import com.project.volume360.screen.subscreen.PDOnFly;
+import com.project.volume360.screen.transition.MainScreenTransitions;
 
 @FXMLLocation(location = "/fxml/MainScene.fxml")
 public class MainScreen extends Screen implements ProjectMenuListener {
@@ -79,11 +79,8 @@ public class MainScreen extends Screen implements ProjectMenuListener {
 
 	@FXML
 	private Pane slidingMenuPane;
-	private boolean slideMenuOpened = false;
 	private boolean newProjectOpened = false;
-	private boolean searchPaneOpened = false;
-	TranslateTransition slideMenuTransition = new TranslateTransition(
-			new Duration(500));
+	MainScreenTransitions mainScreenTransitions;
 	TranslateTransition newProjectTransition = new TranslateTransition(
 			new Duration(500));
 
@@ -97,6 +94,7 @@ public class MainScreen extends Screen implements ProjectMenuListener {
 		createSlidingMenuList();
 		createMenuListItem();
 		newProjectWindowView();
+		mainScreenTransitions = new MainScreenTransitions(slidingMenuPane);
 		searchField.focusedProperty().addListener(
 				(observer, oldValue, newValue) -> searchFieldObserver(observer,
 						oldValue, newValue));
@@ -173,7 +171,7 @@ public class MainScreen extends Screen implements ProjectMenuListener {
 	private Object searchFieldObserver(
 			ObservableValue<? extends Boolean> observer, Boolean oldValue,
 			Boolean newValue) {
-		searchPaneOpened = newValue;
+		mainScreenTransitions.setSearchPaneOpened(newValue);
 		if (newValue) {
 			Image image;
 			InputStream inputStream = MainScreen.class
@@ -189,8 +187,8 @@ public class MainScreen extends Screen implements ProjectMenuListener {
 			actionBar.setStyle("-fx-background-color: #BCBCBC;");
 			menuButton.getStyleClass().add("menu-button-second");
 			menuButton.getStyleClass().remove(1);
-			if (slideMenuOpened)
-				slidingMenuTransition();
+			if (mainScreenTransitions.isSlideMenuOpened())
+				mainScreenTransitions.slidingMenuTransition();
 		} else {
 			InputStream inputStream = MainScreen.class
 					.getResourceAsStream("/images/ic_search_white_18dp.png");
@@ -222,51 +220,15 @@ public class MainScreen extends Screen implements ProjectMenuListener {
 	public void onMenuPressed(ActionEvent actionEvent) {
 		System.out.println(getPrimaryStage().getWidth() + " "
 				+ getPrimaryStage().getHeight());
-		System.out.println(searchPaneOpened);
-		if (!searchPaneOpened)
-			slidingMenuTransition();
+		if (!mainScreenTransitions.isSearchPaneOpened())
+			mainScreenTransitions.slidingMenuTransition();
 	}
 
 	@FXML
 	public void newProjectCreate(ActionEvent actionEvent) {
 		System.out.println(getPrimaryStage().getWidth() + " "
 				+ getPrimaryStage().getHeight());
-		System.out.println(newProjectOpened);
 		newProjectTransition();
-	}
-
-	private void slidingMenuTransition() {
-		slideMenuTransition.setNode(slidingMenuPane);
-		if (!slideMenuOpened) {
-			slideMenuTransition.setFromX(0);
-			slideMenuTransition.setToX(270);
-			slideMenuTransition.setInterpolator(Interpolator.EASE_BOTH);
-			slideMenuTransition.setOnFinished(new EventHandler<ActionEvent>() {
-
-				@Override
-				public void handle(ActionEvent event) {
-					slideMenuOpened = true;
-					if (searchPaneOpened) {
-						slidingMenuTransition();
-					}
-
-				}
-			});
-			slideMenuTransition.play();
-		} else {
-			slideMenuTransition.setFromX(270);
-			slideMenuTransition.setToX(0);
-			slideMenuTransition.setInterpolator(Interpolator.EASE_BOTH);
-			slideMenuTransition.play();
-			slideMenuTransition.setOnFinished(new EventHandler<ActionEvent>() {
-
-				@Override
-				public void handle(ActionEvent event) {
-					slideMenuOpened = false;
-					System.out.println(newProjectOpened);
-				}
-			});
-		}
 	}
 
 	private void newProjectTransition() {

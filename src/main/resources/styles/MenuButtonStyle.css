@@ -1,0 +1,26 @@
+.menu-button {
+	-fx-background-color: rgba(0.0, 0.0, 0.0, 0.0);
+	-fx-background-image: url("images/ic_more_horiz_black_18dp.png");
+	-fx-opacity: 0.8;
+	-fx-padding: 0;
+	-fx-shape:
+		"M 100, 100 m -75, 0 a 75, 75 0 1, 0 150, 0 a 75, 75 0 1, 0	-150, 0";
+}
+
+.menu-button>.arrow-button>.arrow {
+	-fx-padding: 0;
+	-fx-background-color: null;
+	-fx-shape: null;
+}
+
+.menu-button:hover {
+	-fx-background-color: rgba(0.0, 0.0, 0.0, 0.15);
+	-fx-padding: 0;
+	-fx-opacity: 1.0;
+}
+
+.menu-button:pressed, .menu-button:default:hover:pressed {
+	-fx-background-color: rgba(0.0, 0.0, 0.0, 0.2);
+	-fx-opacity: 1.0;
+	-fx-padding: 0;
+}

@@ -3,7 +3,6 @@ package com.project.volume360.screen;
 //import static com.project.betelguese.app.utils.FxmlUrl.logInScreen;
 
 import com.project.volume360.application.ApplicationListener;
-import com.project.volume360.screen.annotation.FXMLLocation;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -90,6 +89,6 @@ public abstract class Screen {
 	 */
 	public void setApplicationListener(ApplicationListener applicationListener) {
 		this.applicationListener = applicationListener;
-	}	
+	}
 
 }
