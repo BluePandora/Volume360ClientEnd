@@ -6,6 +6,7 @@ import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 
 import javafx.animation.Interpolator;
+import javafx.animation.ScaleTransition;
 import javafx.animation.TranslateTransition;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -20,8 +21,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Circle;
@@ -38,6 +37,7 @@ import com.project.volume360.application.item.SlideMenu;
 import com.project.volume360.application.item.SlidingMenuItem;
 import com.project.volume360.screen.annotation.FXMLLocation;
 import com.project.volume360.screen.factory.ScreenFactory;
+import com.project.volume360.screen.subscreen.PDOnFly;
 
 @FXMLLocation(location = "/fxml/MainScene.fxml")
 public class MainScreen extends Screen implements ProjectMenuListener {
@@ -54,6 +54,12 @@ public class MainScreen extends Screen implements ProjectMenuListener {
 	private Button newProjectButton;
 	@FXML
 	private TextField searchField;
+
+	@FXML
+	private StackPane pdOnFlyHolder;
+
+	@FXML
+	private Pane dummyPane;
 
 	@FXML
 	private ListView<SlidingMenuItem> slidingMenu;
@@ -94,6 +100,7 @@ public class MainScreen extends Screen implements ProjectMenuListener {
 		searchField.focusedProperty().addListener(
 				(observer, oldValue, newValue) -> searchFieldObserver(observer,
 						oldValue, newValue));
+
 	}
 
 	private void createMenuListItem() {
@@ -168,9 +175,16 @@ public class MainScreen extends Screen implements ProjectMenuListener {
 			Boolean newValue) {
 		searchPaneOpened = newValue;
 		if (newValue) {
+			Image image;
 			InputStream inputStream = MainScreen.class
 					.getResourceAsStream("/images/ic_arrow_back_black_18dp.png");
-			Image image = new Image(inputStream);
+			if (inputStream == null) {
+				File file = new File(
+						"/Volume360/src/main/resources/images/ic_search_black_18dp.png");
+				image = new Image(file.toURI().toString());
+			} else {
+				image = new Image(inputStream);
+			}
 			searchImage.setImage(image);
 			actionBar.setStyle("-fx-background-color: #BCBCBC;");
 			menuButton.getStyleClass().add("menu-button-second");
@@ -288,6 +302,12 @@ public class MainScreen extends Screen implements ProjectMenuListener {
 	@Override
 	public void onProjectSelect(ProjectListItem projectListItem, int position) {
 		System.out.println(position);
-
+		if (!pdOnFlyHolder.isVisible()) {
+			PDOnFly pdOnFly = PDOnFly.getPDOnFly(getPrimaryStage());
+			pdOnFlyHolder.getChildren().add(pdOnFly.getRootPane());
+			pdOnFly.setHolder(pdOnFlyHolder);
+			pdOnFlyHolder.setVisible(true);
+			dummyPane.setVisible(true);
+		}
 	}
 }

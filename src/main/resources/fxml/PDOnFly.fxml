@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #FFFFFF; -fx-effect: dropshadow(gaussian, rgba(0.0, 0.0, 0.0, 0.5), 20.0, 0.0, 0.0, 0.0); -fx-background-radius: 2;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.volume360.screen.subscreen.PDOnFly">
    <children>
       <ScrollPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #FFFFFF;">
         <content>
@@ -22,7 +21,7 @@
                            </font>
                         </Label>
                         <Separator layoutY="50.0" prefWidth="798.0" />
-                        <MenuButton layoutX="685.0" layoutY="14.0" mnemonicParsing="false" text="MenuButton">
+                        <MenuButton fx:id="pdOnflyMenu" layoutX="685.0" layoutY="14.0" mnemonicParsing="false" text="MenuButton">
                           <items>
                             <MenuItem mnemonicParsing="false" text="Action 1" />
                             <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -149,16 +148,16 @@
                               <Font name="Roboto Condensed Bold" size="20.0" />
                            </font>
                         </Label>
+                        <Text fill="#004586" layoutX="145.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-effect: ;" text="Sample details" wrappingWidth="650.654296875">
+                           <font>
+                              <Font name="Roboto2000980 Light" size="20.0" />
+                           </font>
+                        </Text>
                      </children>
                      <padding>
-                        <Insets bottom="10.0" />
+                        <Insets bottom="92.0" />
                      </padding>
                   </Pane>
-                  <Text fill="#004586" layoutX="141.0" layoutY="500.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sample details" wrappingWidth="650.654296875">
-                     <font>
-                        <Font name="Roboto2000980 Light" size="20.0" />
-                     </font>
-                  </Text>
                </children>
             </AnchorPane>
         </content>

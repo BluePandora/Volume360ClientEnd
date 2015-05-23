@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane style="-fx-background-radius: 5 5 0 0; -fx-background-color: #FAFAFA; -fx-effect: dropshadow(gaussian, rgba(0.0, 0.0, 0.0, 0.5), 20.0, 0.0, 0.0, 0.0);" stylesheets="@../styles/NewProjectStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.volume360.screen.NewProjectWindow">
+<AnchorPane fx:id="rootPane" style="-fx-background-radius: 5 5 0 0; -fx-background-color: #FAFAFA; -fx-effect: dropshadow(gaussian, rgba(0.0, 0.0, 0.0, 0.5), 20.0, 0.0, 0.0, 0.0);" stylesheets="@../styles/NewProjectStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.volume360.screen.NewProjectWindow">
    <children>
       <BorderPane prefHeight="500.0" prefWidth="450.0" style="-fx-background-radius: 5 5 0 0; -fx-background-color: #FAFAFA;">
          <top>
