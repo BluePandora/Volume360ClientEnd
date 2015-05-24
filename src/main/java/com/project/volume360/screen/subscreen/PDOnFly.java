@@ -1,8 +1,10 @@
 package com.project.volume360.screen.subscreen;
 
 import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
@@ -15,6 +17,8 @@ public class PDOnFly extends Screen {
 
 	private StackPane pdOnFlyHolder;
 
+	@FXML
+	private MenuItem closeMenuItem;
 	@FXML
 	private MenuButton pdOnflyMenu;
 
@@ -45,6 +49,22 @@ public class PDOnFly extends Screen {
 				(observer, oldValue, newValue) -> pdOnFlyMenuObserver(observer,
 						oldValue, newValue));
 
+	}
+
+	@FXML
+	private void onMenuItemClicked(ActionEvent actionEvent) {
+		MenuItem clickedMenuItem = (MenuItem) actionEvent.getSource();
+		switch (clickedMenuItem.getId()) {
+		case "closeMenuItem":
+			pdOnFlyHolder.getChildren().remove(0);
+			pdOnFlyHolder.setVisible(false);
+			pdOnFlyHolder.getParent().setVisible(false);
+			System.out.println("clicked");
+			break;
+
+		default:
+			break;
+		}
 	}
 
 	public StackPane getHolder() {
