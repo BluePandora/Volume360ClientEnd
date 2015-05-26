@@ -29,6 +29,7 @@ public class MainApp extends Application implements ApplicationListener {
 	public static void main(String[] args) {
 		launch(args);
 	}
+	
 
 	@Override
 	public void changeScene(int tag) {
