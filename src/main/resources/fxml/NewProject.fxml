@@ -63,12 +63,12 @@
                         <Font name="Roboto Regular" size="16.0" />
                      </font>
                   </TextArea>
-                  <Label layoutY="52.0" prefHeight="41.0" prefWidth="410.0" style="-fx-background-color: rgba(0,0,0,.1); -fx-text-fill: #7A7A7A; -fx-padding: 10;" text="Project workname">
+                  <Label fx:id="workOrderLabel" layoutY="52.0" prefHeight="41.0" prefWidth="410.0" style="-fx-background-color: rgba(0,0,0,.1); -fx-text-fill: #7A7A7A; -fx-padding: 10;" text="Select you work order">
                      <font>
                         <Font name="Roboto Regular" size="16.0" />
                      </font>
                   </Label>
-                  <Button layoutX="332.0" layoutY="52.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="78.0" styleClass="browse-button" text="Browse">
+                  <Button layoutX="332.0" layoutY="52.0" mnemonicParsing="false" onAction="#fileChooser" prefHeight="40.0" prefWidth="78.0" styleClass="browse-button" text="Browse">
                      <font>
                         <Font name="Roboto Bold" size="14.0" />
                      </font>

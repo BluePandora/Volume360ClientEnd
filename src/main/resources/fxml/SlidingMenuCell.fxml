@@ -10,7 +10,7 @@
 
 <AnchorPane fx:id="rootPane" prefWidth="218.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.volume360.application.control.SlidingMenuListCell">
    <children>
-      <HBox spacing="25.0" styleClass="list-cell-holder" stylesheets="@../styles/SlideMenuStyle.css">
+      <HBox layoutY="-1.0" prefHeight="57.0" prefWidth="225.0" spacing="20.0" styleClass="list-cell-holder" stylesheets="@../styles/SlideMenuStyle.css">
          <children>
             <ImageView fx:id="slidingListIcon" fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -19,7 +19,7 @@
             </ImageView>
             <Label fx:id="itemText" prefHeight="36.0" stylesheets="@../styles/SlideMenuStyle.css" text="Done">
                <font>
-                  <Font name="MuseoSansRounded-700" size="18.0" />
+                  <Font name="Roboto2000980 Light" size="18.0" />
                </font>
             </Label>
          </children>
