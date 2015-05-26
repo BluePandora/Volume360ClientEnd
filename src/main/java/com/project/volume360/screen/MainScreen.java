@@ -6,6 +6,8 @@ import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 
 import javafx.animation.Interpolator;
+import javafx.animation.RotateTransition;
+import javafx.animation.ScaleTransition;
 import javafx.animation.TranslateTransition;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -83,6 +85,9 @@ public class MainScreen extends Screen implements ProjectMenuListener {
 	MainScreenTransitions mainScreenTransitions;
 	TranslateTransition newProjectTransition = new TranslateTransition(
 			new Duration(500));
+
+	RotateTransition rotateTransition = new RotateTransition(
+			Duration.millis(250));
 
 	public MainScreen() {
 	}
@@ -232,6 +237,10 @@ public class MainScreen extends Screen implements ProjectMenuListener {
 	}
 
 	private void newProjectTransition() {
+		// rotateTransition.setFromAngle(0);
+		// rotateTransition.setToAngle(180);
+		// rotateTransition.setNode(newProjectButton);
+		// rotateTransition.play();
 		newProjectTransition.setNode(newProjectWindowHolder);
 		if (!newProjectOpened) {
 			newProjectTransition.setFromY(0);
@@ -269,7 +278,16 @@ public class MainScreen extends Screen implements ProjectMenuListener {
 			pdOnFlyHolder.getChildren().add(pdOnFly.getRootPane());
 			pdOnFly.setHolder(pdOnFlyHolder);
 			pdOnFlyHolder.setVisible(true);
+			ScaleTransition scaleTransition = new ScaleTransition(
+					Duration.millis(500));
+			scaleTransition.setFromX(0);
+			scaleTransition.setFromY(0);
+			scaleTransition.setToX(1);
+			scaleTransition.setToY(1);
+			scaleTransition.setInterpolator(Interpolator.EASE_IN);
+			scaleTransition.setNode(pdOnFlyHolder);
 			dummyPane.setVisible(true);
+			scaleTransition.play();
 		}
 	}
 }
