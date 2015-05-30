@@ -23,7 +23,7 @@ public class MainApp extends Application implements ApplicationListener {
 		primaryStage.setResizable(false);
 		this.primaryStage = primaryStage;
 		changeScene(LOG_IN_SCENE);
-		primaryStage.show();
+		primaryStage.show(); 
 	}
 
 	public static void main(String[] args) {
