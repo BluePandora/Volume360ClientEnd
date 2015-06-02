@@ -17,9 +17,9 @@
                   <Image url="@../images/ic_ongoing_24dp.png" />
                </image>
             </ImageView>
-            <Label fx:id="itemText" prefHeight="36.0" stylesheets="@../styles/SlideMenuStyle.css" text="Done">
+            <Label fx:id="itemText" prefHeight="36.0" stylesheets="@../styles/SlideMenuStyle.css" text="Fire &amp; Safety">
                <font>
-                  <Font name="Roboto2000980 Light" size="18.0" />
+                  <Font name="Roboto Slab Light" size="16.0" />
                </font>
             </Label>
          </children>

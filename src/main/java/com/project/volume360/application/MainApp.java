@@ -26,9 +26,11 @@ public class MainApp extends Application implements ApplicationListener {
 		primaryStage.show();
 	}
 
+	
 	public static void main(String[] args) {
 		launch(args);
 	}
+	
 
 	@Override
 	public void changeScene(int tag) {

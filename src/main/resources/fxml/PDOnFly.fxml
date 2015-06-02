@@ -7,82 +7,82 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 2; -fx-effect: dropshadow(gaussian, rgba(0.0, 0.0, 0.0, 0.5), 20.0, 0.0, 0.0, 0.0);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.volume360.screen.subscreen.PDOnFly">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 2; -fx-effect: dropshadow(gaussian, rgba(0.0, 0.0, 0.0, 0.5), 20.0, 0.0, 0.0, 0.0);" stylesheets="@../styles/PDOnFlyStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.volume360.screen.subscreen.PDOnFly">
    <children>
       <ScrollPane layoutY="50.0" prefHeight="550.0" prefWidth="800.0" style="-fx-background-color: #FFFFFF;">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" style="-fx-background-color: #FFFFFF;">
+          <AnchorPane minHeight="0.0" minWidth="0.0" style="-fx-background-color: #EFEFEF;">
                <children>
                   <Pane prefWidth="798.0">
                      <children>
                         <Label layoutX="15.0" layoutY="15.0" text="Project Code:" textFill="#00724f">
                            <font>
-                              <Font name="Roboto Condensed Bold" size="20.0" />
+                              <Font name="Roboto Slab Regular" size="18.0" />
                            </font>
                         </Label>
-                        <TextField editable="false" layoutX="130.0" layoutY="10.0" text="123456">
+                        <TextField fx:id="projectCode" editable="false" layoutX="130.0" layoutY="10.0" text="123456">
                            <font>
                               <Font name="Roboto Bold" size="18.0" />
                            </font>
                         </TextField>
-                        <TextField editable="false" layoutX="130.0" layoutY="55.0" prefHeight="35.0" prefWidth="400.0" text="123456">
+                        <TextField fx:id="projectName" editable="false" layoutX="140.0" layoutY="55.0" prefHeight="35.0" prefWidth="400.0" text="123456">
                            <font>
                               <Font name="Roboto Bold" size="18.0" />
                            </font>
                         </TextField>
                         <Label layoutX="15.0" layoutY="60.0" text="Project Name:" textFill="#00724f">
                            <font>
-                              <Font name="Roboto Condensed Bold" size="20.0" />
+                              <Font name="Roboto Slab Regular" size="18.0" />
                            </font>
                         </Label>
                         <Label layoutX="15.0" layoutY="150.0" text="Project Taken at:" textFill="#00724f">
                            <font>
-                              <Font name="Roboto Condensed Bold" size="20.0" />
+                              <Font name="Roboto Slab Regular" size="18.0" />
                            </font>
                         </Label>
-                        <DatePicker editable="false" layoutX="156.0" layoutY="145.0" prefHeight="34.0" prefWidth="174.0" promptText="12/12/12" />
-                        <DatePicker editable="false" layoutX="590.0" layoutY="145.0" prefHeight="34.0" prefWidth="174.0" promptText="12/12/12" />
+                        <DatePicker fx:id="projectTakenDate" editable="false" layoutX="160.0" layoutY="145.0" prefHeight="34.0" prefWidth="174.0" promptText="12/12/12" />
+                        <DatePicker fx:id="projectCompleteDate" editable="false" layoutX="600.0" layoutY="145.0" prefHeight="34.0" prefWidth="174.0" promptText="12/12/12" />
                         <Label layoutX="340.0" layoutY="150.0" text="Estimated Completation Date:" textFill="#00724f">
                            <font>
-                              <Font name="Roboto Condensed Bold" size="20.0" />
+                              <Font name="Roboto Slab Regular" size="18.0" />
                            </font>
                         </Label>
-                        <TextField editable="false" layoutX="170.0" layoutY="190.0" text="12 days">
+                        <TextField fx:id="timeLeft" editable="false" layoutX="175.0" layoutY="190.0" text="12 days">
                            <font>
                               <Font name="Roboto Bold" size="18.0" />
                            </font>
                         </TextField>
                         <Label layoutX="15.0" layoutY="195.0" text="Time left to finish:" textFill="#00724f">
                            <font>
-                              <Font name="Roboto Condensed Bold" size="20.0" />
+                              <Font name="Roboto Slab Regular" size="18.0" />
                            </font>
                         </Label>
                         <Label layoutX="15.0" layoutY="105.0" text="Project Location:" textFill="#00724f">
                            <font>
-                              <Font name="Roboto Condensed Bold" size="20.0" />
+                              <Font name="Roboto Slab Regular" size="18.0" />
                            </font>
                         </Label>
-                        <TextField editable="false" layoutX="155.0" layoutY="100.0" prefHeight="35.0" prefWidth="400.0" text="123456">
+                        <TextField fx:id="projectLocation" editable="false" layoutX="160.0" layoutY="100.0" prefHeight="35.0" prefWidth="400.0" text="123456">
                            <font>
                               <Font name="Roboto Bold" size="18.0" />
                            </font>
                         </TextField>
-                        <TextField editable="false" layoutX="455.0" layoutY="10.0" text="123456">
+                        <TextField fx:id="creatorName" editable="false" layoutX="455.0" layoutY="10.0" text="123456">
                            <font>
                               <Font name="Roboto Bold" size="18.0" />
                            </font>
                         </TextField>
                         <Label layoutX="355.0" layoutY="15.0" text="Created By:" textFill="#00724f">
                            <font>
-                              <Font name="Roboto Condensed Bold" size="20.0" />
+                              <Font name="Roboto Slab Regular" size="18.0" />
                            </font>
                         </Label>
                         <Label layoutX="15.0" layoutY="240.0" text="Project Estimated Budget:" textFill="#00724f">
                            <font>
-                              <Font name="Roboto Condensed Bold" size="20.0" />
+                              <Font name="Roboto Slab Regular" size="18.0" />
                            </font>
                         </Label>
-                        <TextField editable="false" layoutX="230.0" layoutY="235.0" prefHeight="35.0" prefWidth="150.0" text="1111111111">
+                        <TextField fx:id="projectBudget" editable="false" layoutX="240.0" layoutY="235.0" prefHeight="35.0" prefWidth="150.0" text="1111111111">
                            <font>
                               <Font name="Roboto Bold" size="18.0" />
                            </font>
@@ -94,53 +94,53 @@
                      <children>
                         <Label layoutX="15.0" layoutY="15.0" text="Project Type:" textFill="#00724f">
                            <font>
-                              <Font name="Roboto Condensed Bold" size="20.0" />
+                              <Font name="Roboto Slab Regular" size="18.0" />
                            </font>
                         </Label>
-                        <TextField editable="false" layoutX="130.0" layoutY="10.0" text="123456">
+                        <TextField fx:id="projectType" editable="false" layoutX="130.0" layoutY="10.0" text="123456">
                            <font>
                               <Font name="Roboto Bold" size="18.0" />
                            </font>
                         </TextField>
-                        <TextField editable="false" layoutX="130.0" layoutY="55.0" prefHeight="35.0" prefWidth="100.0" text="123456">
+                        <TextField fx:id="totalWorker" editable="false" layoutX="130.0" layoutY="55.0" prefHeight="35.0" prefWidth="100.0" text="123456">
                            <font>
                               <Font name="Roboto Bold" size="18.0" />
                            </font>
                         </TextField>
                         <Label layoutX="15.0" layoutY="60.0" text="Total Worker:" textFill="#00724f">
                            <font>
-                              <Font name="Roboto Condensed Bold" size="20.0" />
+                              <Font name="Roboto Slab Regular" size="18.0" />
                            </font>
                         </Label>
                         <Separator layoutY="180.0" prefWidth="798.0" />
                         <Label layoutX="15.0" layoutY="105.0" text="Daily Expend on the Worker:" textFill="#00724f">
                            <font>
-                              <Font name="Roboto Condensed Bold" size="20.0" />
+                              <Font name="Roboto Slab Regular" size="18.0" />
                            </font>
                         </Label>
-                        <TextField editable="false" layoutX="245.0" layoutY="100.0" prefHeight="35.0" prefWidth="125.0" text="123456">
+                        <TextField fx:id="dailyExpendOnWorker" editable="false" layoutX="260.0" layoutY="100.0" prefHeight="35.0" prefWidth="125.0" text="123456">
                            <font>
                               <Font name="Roboto Bold" size="18.0" />
                            </font>
                         </TextField>
-                        <TextField editable="false" layoutX="605.0" layoutY="100.0" prefHeight="35.0" prefWidth="125.0" text="123456">
+                        <TextField fx:id="dailyExpendOnProject" editable="false" layoutX="635.0" layoutY="100.0" prefHeight="35.0" prefWidth="125.0" text="123456">
                            <font>
                               <Font name="Roboto Bold" size="18.0" />
                            </font>
                         </TextField>
-                        <Label layoutX="375.0" layoutY="105.0" text="Total Expend on the Project:" textFill="#00724f">
+                        <Label layoutX="390.0" layoutY="105.0" text="Total Expend on the Project:" textFill="#00724f">
                            <font>
-                              <Font name="Roboto Condensed Bold" size="20.0" />
+                              <Font name="Roboto Slab Regular" size="18.0" />
                            </font>
                         </Label>
-                        <TextField editable="false" layoutX="145.0" layoutY="140.0" prefHeight="35.0" prefWidth="70.0" text="100%">
+                        <TextField fx:id="workProgress" editable="false" layoutX="145.0" layoutY="140.0" prefHeight="35.0" prefWidth="70.0" text="100%">
                            <font>
                               <Font name="Roboto Bold" size="18.0" />
                            </font>
                         </TextField>
                         <Label layoutX="15.0" layoutY="145.0" text="Work Progress:" textFill="#00724f">
                            <font>
-                              <Font name="Roboto Condensed Bold" size="20.0" />
+                              <Font name="Roboto Slab Regular" size="18.0" />
                            </font>
                         </Label>
                      </children>
@@ -149,12 +149,12 @@
                      <children>
                         <Label layoutX="15.0" layoutY="5.0" text="Project Details:" textFill="#00724f">
                            <font>
-                              <Font name="Roboto Condensed Bold" size="20.0" />
+                              <Font name="Roboto Slab Regular" size="18.0" />
                            </font>
                         </Label>
-                        <Text fill="#004586" layoutX="145.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sample details" wrappingWidth="650.654296875">
+                        <Text fx:id="projectDetails" fill="#004586" layoutX="145.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sample details" wrappingWidth="650.654296875">
                            <font>
-                              <Font name="Roboto2000980 Light" size="20.0" />
+                              <Font name="Roboto2000980 Light" size="18.0" />
                            </font>
                         </Text>
                      </children>
@@ -166,18 +166,18 @@
             </AnchorPane>
         </content>
       </ScrollPane>
-      <Pane prefWidth="798.0">
+      <Pane prefWidth="798.0" style="-fx-background-color: #EFEFEF;">
          <children>
             <Label layoutX="15.0" layoutY="15.0" text="Project Details" textFill="#0257b2">
                <font>
-                  <Font name="Roboto Condensed Bold" size="20.0" />
+                  <Font name="Roboto Slab Regular" size="18.0" />
                </font>
             </Label>
             <Separator layoutY="50.0" prefWidth="798.0" />
             <MenuButton fx:id="pdOnflyMenu" layoutX="748.0" layoutY="9.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="36.0" styleClass="menu-button" stylesheets="@../styles/MenuButtonStyle.css">
               <items>
-                <MenuItem mnemonicParsing="false" text="Edit" />
-                <MenuItem mnemonicParsing="false" text="Update Project" />
+                <MenuItem fx:id="editMenuItem" mnemonicParsing="false" onAction="#onMenuItemClicked" text="Edit" />
+                <MenuItem fx:id="updateProjectMenuItem" mnemonicParsing="false" onAction="#onMenuItemClicked" text="Update Project" />
                   <MenuItem fx:id="closeMenuItem" mnemonicParsing="false" onAction="#onMenuItemClicked" text="Close" />
               </items>
             </MenuButton>

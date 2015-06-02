@@ -16,47 +16,47 @@
       </ImageView>
       <Text fill="#005eff" layoutX="76.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Location:">
          <font>
-            <Font name="Roboto2000980 Black" size="20.0" />
+            <Font name="Roboto Slab Light" size="20.0" />
          </font>
       </Text>
       <Text fill="#002b47" layoutX="663.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="22-01-2015 12:00:00" wrappingWidth="175.13671875">
          <font>
-            <Font name="Roboto Condensed Light" size="18.0" />
+            <Font name="Roboto Condensed Regular" size="18.0" />
          </font>
       </Text>
       <Text fill="#00791a" layoutX="74.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Created By:">
          <font>
-            <Font name="Roboto2000980 Bold" size="18.0" />
+            <Font name="Roboto Slab Light" size="18.0" />
          </font>
       </Text>
       <Label layoutX="168.0" layoutY="39.0" prefHeight="30.0" prefWidth="670.0" text="Project" textFill="#002d7a">
          <font>
-            <Font name="Roboto2000980 Medium" size="18.0" />
+            <Font name="Roboto Slab Regular" size="18.0" />
          </font>
       </Label>
       <Label layoutX="175.0" layoutY="70.0" prefHeight="30.0" prefWidth="282.0" text="Full Name" textFill="#002d7a">
          <font>
-            <Font name="Roboto2000980 Medium" size="18.0" />
+            <Font name="Roboto Slab Regular" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="577.0" layoutY="68.0" prefHeight="30.0" prefWidth="270.0" text="Type" textFill="#002d7a">
+      <Label layoutX="575.0" layoutY="69.0" prefHeight="30.0" prefWidth="270.0" text="Type" textFill="#002d7a">
          <font>
-            <Font name="Roboto2000980 Medium" size="18.0" />
+            <Font name="Roboto Slab Regular" size="18.0" />
          </font>
       </Label>
       <Text fill="#787800" layoutX="462.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Project Type:">
          <font>
-            <Font name="Roboto2000980 Bold" size="18.0" />
+            <Font name="Roboto Slab Light" size="18.0" />
          </font>
       </Text>
-      <Label layoutX="181.0" layoutY="9.0" prefHeight="30.0" prefWidth="425.0" text="Name" textFill="#002d7a">
+      <Label layoutX="181.0" layoutY="6.0" prefHeight="30.0" prefWidth="425.0" text="Name" textFill="#002d7a">
          <font>
-            <Font name="Roboto2000980 Medium" size="25.0" />
+            <Font name="Roboto Slab Regular" size="25.0" />
          </font>
       </Label>
       <Text fill="#3400ae" layoutX="14.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Project Name:">
          <font>
-            <Font name="Roboto2000980 Black" size="25.0" />
+            <Font name="Roboto Slab Light" size="25.0" />
          </font>
       </Text>
    </children>

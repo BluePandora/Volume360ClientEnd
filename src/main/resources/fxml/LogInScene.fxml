@@ -23,33 +23,33 @@
                            <children>
                               <TextField fx:id="userNameTextField" prefHeight="40.0" prefWidth="300.0" promptText="Username">
                                  <font>
-                                    <Font name="Roboto Regular" size="20.0" />
+                                    <Font name="Roboto Slab Regular" size="20.0" />
                                  </font>
                               </TextField>
                               <PasswordField fx:id="passwordTextField" prefHeight="40.0" prefWidth="300.0" promptText="Password">
                                  <font>
-                                    <Font name="Roboto Regular" size="20.0" />
+                                    <Font name="Roboto Slab Regular" size="20.0" />
                                  </font>
                               </PasswordField>
                            </children>
                         </VBox>
                         <Button fx:id="signInButton" layoutX="94.0" layoutY="300.0" mnemonicParsing="false" onAction="#handleSignIn" prefHeight="40.0" prefWidth="300.0" text="SIGN IN">
                            <font>
-                              <Font name="Roboto Condensed Light" size="20.0" />
+                              <Font name="Roboto Slab Light" size="20.0" />
                            </font>
                         </Button>
                   <ImageView fitHeight="75.0" fitWidth="200.0" layoutX="150.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/volume360.png" />
                      </image></ImageView>
-                  <Text fill="#00144a" layoutX="163.0" layoutY="381.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Forgot Password?" underline="true">
+                  <Button layoutX="166.0" layoutY="358.0" styleClass="forget-button" text="Forgot Password?" underline="true">
                      <font>
-                        <Font name="Roboto Regular" size="20.0" />
+                        <Font name="Roboto Slab Regular" size="20.0" />
                      </font>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
-                  </Text>
+                  </Button>
                      </children>
                   </Pane>
                </children>

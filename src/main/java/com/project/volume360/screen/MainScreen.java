@@ -237,10 +237,10 @@ public class MainScreen extends Screen implements ProjectMenuListener {
 	}
 
 	private void newProjectTransition() {
-		// rotateTransition.setFromAngle(0);
-		// rotateTransition.setToAngle(180);
-		// rotateTransition.setNode(newProjectButton);
-		// rotateTransition.play();
+		 rotateTransition.setFromAngle(0);
+		 rotateTransition.setToAngle(180);
+		 rotateTransition.setNode(newProjectButton);
+		 rotateTransition.play();
 		newProjectTransition.setNode(newProjectWindowHolder);
 		if (!newProjectOpened) {
 			newProjectTransition.setFromY(0);

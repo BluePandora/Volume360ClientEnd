@@ -9,8 +9,9 @@
 .log-in-pane {
 	-fx-background-color: #f2f2f2;
 	-fx-background-radius: 2.0;
-	-fx-effect: dropshadow(gaussian, rgba(0.0, 0.0, 0.0, 0.5), 5.0, 0.0, 0.0, 3.0);
-/* 	-fx-shape:"M440.789,174.684H138.474c-6.627,0-12,5.373-12,12v184.794l-12.772,12.772l12.772,12.772v19.609
+	-fx-effect: dropshadow(gaussian, rgba(0.0, 0.0, 0.0, 0.5), 5.0, 0.0, 0.0,
+		3.0);
+	/* 	-fx-shape:"M440.789,174.684H138.474c-6.627,0-12,5.373-12,12v184.794l-12.772,12.772l12.772,12.772v19.609
 	c0,6.627,5.373,12,12,12h302.316c6.627,0,12-5.373,12-12V186.684C452.789,180.057,447.417,174.684,440.789,174.684z";*/
 }
 
@@ -46,10 +47,29 @@
 
 .button:hover {
 	-fx-background-color: #F26D21;
-	-fx-effect: dropshadow(three-pass-box, rgba(0.0, 0.0, 0.0, 0.6), 10.0, 0.0, 0.0, 3.0);
+	-fx-effect: dropshadow(three-pass-box, rgba(0.0, 0.0, 0.0, 0.6), 10.0,
+		0.0, 0.0, 3.0);
 }
 
 .button:pressed, .button:default:hover:pressed {
 	-fx-background-color: #F26D21;
-	-fx-effect: dropshadow(three-pass-box, rgba(0.0, 0.0, 0.0, 0.3), 10.0, 0.0, 0.0, 3.0);
+	-fx-effect: dropshadow(three-pass-box, rgba(0.0, 0.0, 0.0, 0.3), 10.0,
+		0.0, 0.0, 3.0);
+}
+
+.forget-button {
+	-fx-background-color: null;
+	-fx-padding: 0.0;
+	-fx-text-fill: #003dcc;
+}
+
+.forget-button:hover {
+	-fx-background-color: null;
+	-fx-text-fill: #002380;
+	-fx-effect: null;
+}
+
+.forget-button:pressed, .forget-button:default:hover:pressed {
+	-fx-background-color: null;
+	-fx-text-fill: #01144a;
 }
