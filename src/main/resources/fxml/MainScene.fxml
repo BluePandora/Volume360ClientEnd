@@ -56,11 +56,11 @@
       </Pane>
 		<Pane fx:id="actionBar" prefHeight="60.0" prefWidth="1280.0" styleClass="action-bar" stylesheets="@../styles/MainSceneStyle.css">
 			<children>
-				<ImageView fx:id="imageView" fitHeight="50.0" fitWidth="50.0" layoutX="1197.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-					<image>
-						<Image url="@../styles/images/9397052.jpg" />
-					</image>
-				</ImageView>
+      				<ImageView fx:id="imageView" fitHeight="50.0" layoutX="1197.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+      					<image>
+      						<Image url="@../styles/images/9397052.jpg" />
+      					</image>
+      				</ImageView>
 				<TextField fx:id="searchField" layoutX="272.0" layoutY="10.0" prefHeight="40.0" prefWidth="860.0" promptText="Search" styleClass="search-field">
 					<font>
 						<Font name="Roboto Bold" size="18.0" />

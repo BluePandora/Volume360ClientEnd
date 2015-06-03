@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 
+import javax.swing.JOptionPane;
+
 import javafx.animation.Interpolator;
 import javafx.animation.RotateTransition;
 import javafx.animation.ScaleTransition;
@@ -15,6 +17,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
@@ -25,6 +28,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.SVGPath;
+import javafx.scene.shape.Shape;
 import javafx.util.Callback;
 import javafx.util.Duration;
 
@@ -170,6 +175,7 @@ public class MainScreen extends Screen implements ProjectMenuListener {
 		clip.setRadius(imageView.getLayoutBounds().getWidth() / 2);
 		clip.setTranslateX(imageView.getLayoutBounds().getWidth() / 2);
 		clip.setTranslateY(imageView.getLayoutBounds().getWidth() / 2);
+		clip.setRadius(imageView.getLayoutBounds().getWidth() / 2);
 		imageView.setClip(clip);
 	}
 
@@ -237,10 +243,10 @@ public class MainScreen extends Screen implements ProjectMenuListener {
 	}
 
 	private void newProjectTransition() {
-		 rotateTransition.setFromAngle(0);
-		 rotateTransition.setToAngle(180);
-		 rotateTransition.setNode(newProjectButton);
-		 rotateTransition.play();
+		rotateTransition.setFromAngle(0);
+		rotateTransition.setToAngle(180);
+		rotateTransition.setNode(newProjectButton);
+		rotateTransition.play();
 		newProjectTransition.setNode(newProjectWindowHolder);
 		if (!newProjectOpened) {
 			newProjectTransition.setFromY(0);
@@ -272,7 +278,7 @@ public class MainScreen extends Screen implements ProjectMenuListener {
 
 	@Override
 	public void onProjectSelect(ProjectListItem projectListItem, int position) {
-		System.out.println(position);
+		System.out.println(position + "selected");
 		if (!pdOnFlyHolder.isVisible()) {
 			PDOnFly pdOnFly = PDOnFly.getPDOnFly(getPrimaryStage());
 			pdOnFlyHolder.getChildren().add(pdOnFly.getRootPane());
